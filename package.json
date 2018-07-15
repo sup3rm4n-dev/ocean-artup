@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "ocean-artup-homepage",
+  "title": "Ocean artUp",
+  "homepage": "https://ocean-artup.eu",
+  "version": "1.0.0",
+  "author": "Janosh Riebesell <janosh.riebesell@gmail.com>",
+  "repository": "https://github.com/JanoshRiebesell/ocean-artup",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "gatsby": "next",
+    "gatsby-plugin-catch-links": "next",
+    "gatsby-plugin-favicon": "2.1.1",
+    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-offline": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-typography": "next",
+    "gatsby-remark-images-contentful": "next",
+    "gatsby-remark-smartypants": "next",
+    "gatsby-source-contentful": "next",
+    "gatsby-transformer-remark": "next",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.13",
+    "styled-components": "^3.2.6",
+    "styled-icons": "^2.2.0",
+    "typography": "^0.16.17",
+    "typography-theme-noriega": "^0.15.10"
+  },
+  "devDependencies": {
+    "prettier": "^1.9.2"
+  },
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
