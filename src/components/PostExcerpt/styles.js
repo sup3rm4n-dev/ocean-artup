@@ -22,12 +22,12 @@ export const Meta = styled.div`
   font-size: 0.9rem;
 `
 
-export const Tags = styled.p`
+export const Categories = styled.p`
   display: flex;
   flex-wrap: wrap;
 `
 
-export const Tag = styled.span`
+export const Category = styled.span`
   padding: 0 0.5rem;
   border-radius: ${props => props.theme.largeBorderRadius};
   background: ${props => props.theme.lightGray};
