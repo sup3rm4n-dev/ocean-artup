@@ -50,11 +50,11 @@ const Layout = ({ children }) => (
         footer: contentfulJson(title: {eq: "Footer"}) {
           data {
             copyright
+            authorsNote
             links {
               url
               title
             }
-            authorsNote
           }
         }
       }

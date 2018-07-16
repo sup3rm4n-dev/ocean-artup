@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import {
   Container,
@@ -10,7 +10,6 @@ const Footer = ({
   footer: { copyright, links, authorsNote }
 }) => (
   <Container>
-      <span>© {new Date().getFullYear()} - {copyright}</span>
       <FooterNav>
         {links.map(link =>
           <Link key={link.url} to={link.url}>
@@ -18,6 +17,7 @@ const Footer = ({
           </Link>
         )}
       </FooterNav>
+      <span>© {new Date().getFullYear()} - {copyright}</span>
       <span dangerouslySetInnerHTML={{__html: authorsNote}} />
   </Container>
 )

@@ -4,7 +4,7 @@ import mediaQuery from '../../utils/mediaQuery'
 
 export const Container = styled.footer`
   background-color: ${props => props.theme.darkGray};
-  padding: 1rem 2rem;
+  padding: 3rem;
   color: ${props => props.theme.mainWhite};
   display: grid;
   justify-items: center;
@@ -13,9 +13,10 @@ export const Container = styled.footer`
   a {
     color: ${props => props.theme.mainOrange}
   }
-  ${mediaQuery.minTablet} {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
+  ${mediaQuery.minPhablet} {
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+    justify-content: center;
   }
 `
 
