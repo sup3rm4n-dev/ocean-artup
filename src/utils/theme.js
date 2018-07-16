@@ -1,13 +1,14 @@
 const theme = {
   mainBlue: `#2A4FA8`,
   lightBlue: `#97C9F4`,
+  lightGreen: `#21b2a6`,
   mainOrange: `#ecbf3f`,
   mainGray: `#506C64`,
   darkGray: `#1d242a`,
   mainWhite: `white`,
   mainBlack: `black`,
 
-  maxWidth: `50rem`,
+  maxWidth: `45rem`,
 
   smallBorder: `0.1rem`,
   mediumBorder: `0.2rem`,

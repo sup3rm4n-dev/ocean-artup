@@ -7,7 +7,7 @@ import PageTitle from '../components/PageTitle'
 import BlogIndex from '../components/BlogIndex'
 
 const blogCategoryTemplate = ({ data, location }) => {
-  const { activeCategory = { title: ``, description: { text: ``}}, site } = data
+  const { activeCategory , site } = data
   const title = `Blog - ${activeCategory.title}`
   const { text } = activeCategory.description
   const path = location.pathname
