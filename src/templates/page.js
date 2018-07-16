@@ -22,7 +22,7 @@ const PageTemplate = ({ data, location }) => {
 
 export default PageTemplate
 
-export const siteMetaQuery = graphql`
+export const pageQuery = graphql`
   fragment siteMetaQuery on RootQueryType {
     site {
       meta: siteMetadata {
@@ -31,9 +31,6 @@ export const siteMetaQuery = graphql`
       }
     }
   }
-`
-
-export const pageQuery = graphql`
   query($slug: String!) {
     ...siteMetaQuery
     page: contentfulPage(slug: {eq: $slug}) {

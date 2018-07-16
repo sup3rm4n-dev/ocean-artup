@@ -18,7 +18,7 @@ const Blog = ({ data, location }) => {
 
 export default Blog
 
-export const categories = graphql`
+export const blogIndexQuery = graphql`
   fragment categories on RootQueryType {
     categories: allContentfulBlogCategory(
       sort: { fields: [title], order: ASC}
@@ -37,9 +37,6 @@ export const categories = graphql`
       }
     }
   }
-`
-
-export const blogIndexQuery = graphql`
   {
     ...siteMetaQuery
     posts: allContentfulBlogPost(

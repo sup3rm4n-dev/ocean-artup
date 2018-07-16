@@ -21,11 +21,11 @@ const PostTemplate = ({ data, location }) => {
 
 export default PostTemplate
 
-export const postFields = graphql`
+export const postQuery = graphql`
   fragment postFields on ContentfulBlogPost {
     slug
     title
-    category {
+    categories: category {
       title
     }
     date(formatString: "MMMM DD, YYYY")
@@ -37,9 +37,6 @@ export const postFields = graphql`
       }
     }
   }
-`
-
-export const postQuery = graphql`
   query($slug: String!) {
     ...siteMetaQuery
     post: contentfulBlogPost(slug: { eq: $slug }) {
