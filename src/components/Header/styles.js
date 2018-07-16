@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import mediaQuery from '../../utils/mediaQuery'
 
@@ -34,9 +34,8 @@ export const Logo = styled.div`
   width: 2rem;
   padding: 0.2rem;
   border-radius: 50%;
-  background: white;
+  background: ${props => props.theme.mainWhite};;
   overflow: hidden;
-  border: ${({theme}) => theme.smallBorder + ' solid ' + theme.mainWhite};
 `
 
 export const SiteTitle = styled(Link)`

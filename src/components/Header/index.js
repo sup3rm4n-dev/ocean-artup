@@ -19,7 +19,7 @@ class Header extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside);
   }
 
@@ -32,7 +32,7 @@ class Header extends React.Component {
     return <Content>
       <SiteTitle to="/" title={meta.title} rel="home">
         <Logo>
-          <img src={logo} alt="Logo"/>
+          <img src={logo} alt="Logo" />
         </Logo>
         {meta.title}
       </SiteTitle>
