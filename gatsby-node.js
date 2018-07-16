@@ -17,9 +17,21 @@ const contentfulQuery = (contentType) => `
 `
 
 const pageSets = [
-  { query: contentfulQuery(`Page`), component: pageTemplate, pathPrefix: `` },
-  { query: contentfulQuery(`BlogPost`), component: postTemplate, pathPrefix: `blog/` },
-  { query: contentfulQuery(`BlogCategory`), component: blogCategoryTemplate, pathPrefix: `blog/` },
+  {
+    query: contentfulQuery(`Page`),
+    component: pageTemplate,
+    pathPrefix: ``
+  },
+  {
+    query: contentfulQuery(`BlogPost`),
+    component: postTemplate,
+    pathPrefix: `blog/`
+  },
+  {
+    query: contentfulQuery(`BlogCategory`),
+    component: blogCategoryTemplate,
+    pathPrefix: `blog/`
+  },
 ]
 
 exports.createPages = ({ graphql, actions }) => {
