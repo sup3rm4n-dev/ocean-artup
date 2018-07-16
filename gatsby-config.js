@@ -28,6 +28,8 @@ module.exports = {
             },
           },
           `gatsby-remark-smartypants`,
+          `gatsby-remark-embed-video`,
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
