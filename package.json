@@ -10,7 +10,6 @@
     "babel-plugin-styled-components": "^1.5.1",
     "gatsby": "next",
     "gatsby-plugin-catch-links": "next",
-    "gatsby-plugin-favicon": "2.1.1",
     "gatsby-plugin-google-analytics": "next",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
