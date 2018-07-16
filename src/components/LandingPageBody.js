@@ -36,7 +36,7 @@ export const PageBody = styled.article`
     }
     ${mediaQuery.minTablet} {
       display: flex;
-      &:nth-child(2n) {
+      &:nth-child(2n+1) {
         flex-direction: row-reverse;
       }
     }

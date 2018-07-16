@@ -15,7 +15,7 @@ const PostExcerpt = ({ post }) => (
     </Meta>
     <p dangerouslySetInnerHTML={{ __html: post.body.data.excerpt }} />
     <Categories>Categories: {post.categories.map(category =>
-      <Category>{category}</Category>
+      <Category>{category.title}</Category>
     )}</Categories>
   </Article>
 )
