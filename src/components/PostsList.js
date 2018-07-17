@@ -4,7 +4,7 @@ import PostExcerpt from './PostExcerpt'
 
 const PostsList = ({ posts }) => (
   <div>
-    {posts.edges.map(({ node: post }) => (
+    {posts.map(({ node: post }) => (
       <PostExcerpt key={post.slug} post={post} />
     ))}
   </div>
