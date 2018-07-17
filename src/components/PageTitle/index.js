@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Layout, Title, Subtitle } from './styles'
+import { Container, Title, Subtitle } from './styles'
 
 const PageTitle = ({ title, subtitle }) => (
-  <Layout>
+  <Container>
     <Title>{title}</Title>
     {subtitle && <Subtitle>{subtitle}</Subtitle>}
-  </Layout>
+  </Container>
 )
 
 export default PageTitle

@@ -12,7 +12,7 @@ const headerStyles = ({ fontSize, maxFontSize }) => css`
   }
 `
 
-export const Layout = styled.header`
+export const Container = styled.header`
   text-align: center;
   margin: 10vh 0;
 `
