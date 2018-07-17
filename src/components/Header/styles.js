@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import mediaQuery from '../../utils/mediaQuery'
 
 const navLinkStyle = css`
-  color: inherit;
   &:hover {
     color: ${props => props.theme.mainOrange};
     text-decoration: none;
@@ -86,7 +85,9 @@ export const ToggleNav = styled.button`
     display: none;
   }
   ${props => props.inside && `
+    transform: scale(2);
     position: absolute;
-    right: 0.6rem;
+    top: 0.7rem;
+    right: 1.3rem;
   `}
 `
