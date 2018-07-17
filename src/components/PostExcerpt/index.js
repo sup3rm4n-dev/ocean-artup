@@ -11,7 +11,7 @@ const PostExcerpt = ({ post }) => (
       </TitleLink>
     </Title>
     <Meta>
-      <DateIcon /> {post.date} | <TimeIcon /> {post.body.data.timeToRead} Min Lesezeit
+      <DateIcon />&ensp;{post.date}&ensp;|&ensp;<TimeIcon /> {post.body.data.timeToRead} min read
     </Meta>
     <p dangerouslySetInnerHTML={{ __html: post.body.data.excerpt }} />
     <Categories>Categories: {post.categories.map(category =>

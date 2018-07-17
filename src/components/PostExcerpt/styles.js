@@ -13,8 +13,7 @@ export const Title = styled.h1`
 `
 
 export const TitleLink = styled(Link)`
-  text-decoration: none;
-  color: ${props => props.theme.mainBlue};
+  color: ${props => props.theme.lightGreen};
 `
 
 export const Meta = styled.div`
