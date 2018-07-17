@@ -1,18 +1,27 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout' 
-import Helmet from '../components/Helmet' 
-import PageTitle from '../components/PageTitle' 
-import BlogIndex from '../components/BlogIndex'
+import Layout from '../components/Layout'
+import Helmet from '../components/Helmet'
+import PageTitle from '../components/PageTitle'
+import PageBody from '../components/PageBody'
+import CategoryList from '../components/CategoryList'
+import PostsList from '../components/PostsList'
 
 const Blog = ({ data, location }) => {
   const title = `Blog`
+  const { posts, categories } = data
   const path = location.pathname
   return <Layout>
     <Helmet pageTitle={title} site={data.site} path={path} />
     <PageTitle title={title} />
-    <BlogIndex {...data} />
+    <PageBody>
+      <CategoryList
+        title="Categories"
+        categories={categories.edges}
+      />
+      {posts && <PostsList posts={posts.edges} />}
+    </PageBody>
   </Layout>
 }
 
