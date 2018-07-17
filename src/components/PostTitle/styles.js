@@ -1,15 +1,17 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Container = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: ${props => props.theme.mainWhite};
+  text-align: center;
+  margin: 10vh 0;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 `
 
 export const Title = styled.h1`
-  margin: 0;
-  font-weight: 300;
-  color: ${props => props.theme.mainBlue};
+font-size: 1.6rem;
 `
 
 export const Meta = styled.div`
@@ -18,6 +20,14 @@ export const Meta = styled.div`
   padding: 0 0.6rem;
   margin: 0.75rem 0 1.5rem;
   color: ${props => props.theme.mainOrange};
-  border: ${({theme}) => theme.mediumBorder + ' solid ' + theme.lightBlue};
+  background: ${props => props.theme.mainGray};
+  border: ${({theme}) => theme.smallBorder + ' solid ' + theme.mainWhite};
   border-radius: ${props => props.theme.largeBorderRadius};
+`
+
+export const BackLink = styled(Link)`
+  width: max-content;
+  padding: 0 0.6rem;
+  border-radius: ${props => props.theme.largeBorderRadius};
+  background: rgba(0, 0, 0, 0.5);
 `
