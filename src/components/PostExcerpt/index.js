@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Article, Title, TitleLink, Meta, Categories, Category } from './styles'
+import { Article, Title, TitleLink, Meta, Category } from './styles'
 import { DateIcon, TimeIcon } from '../Icons'
 
 const PostExcerpt = ({ post }) => (
@@ -12,11 +12,11 @@ const PostExcerpt = ({ post }) => (
     </Title>
     <Meta>
       <DateIcon />&ensp;{post.date}&ensp;|&ensp;<TimeIcon /> {post.body.data.timeToRead} min read
+      &ensp;|&ensp;<span>{post.categories.map(category =>
+        <Category>{category.title}</Category>
+      )}</span>
     </Meta>
     <p dangerouslySetInnerHTML={{ __html: post.body.data.excerpt }} />
-    <Categories>Categories: {post.categories.map(category =>
-      <Category>{category.title}</Category>
-    )}</Categories>
   </Article>
 )
 
