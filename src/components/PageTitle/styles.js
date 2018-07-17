@@ -1,17 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import mediaQuery from '../../utils/mediaQuery'
+
+const headerStyles = ({ fontSize, maxFontSize }) => css`
+  color: ${props => props.theme.mainWhite};
+  font-size: ${fontSize};
+  max-width: 80vw;
+  margin: 2rem auto;
+  ${mediaQuery.minLaptop} {
+    font-size: ${maxFontSize};
+  }
+`
 
 export const Layout = styled.header`
   text-align: center;
-  margin: 8rem 0 10rem;
+  margin: 10vh 0;
 `
 
 export const Title = styled.h1`
-  color: ${props => props.theme.mainWhite};
-  font-size: 3.5rem;
+  ${headerStyles({ fontSize: `10vw`, maxFontSize: `6rem` })};
 `
 
 export const Subtitle = styled.h2`
-  color: ${props => props.theme.mainWhite};
-  font-size: 2.5rem;
-  font-weight: 100;
+  ${headerStyles({ fontSize: `5vw`, maxFontSize: `3rem` })};
 `
