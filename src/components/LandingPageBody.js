@@ -29,6 +29,9 @@ export const PageBody = styled.article`
     a {
       color: ${props => props.theme.mainOrange};
     }
+    > p {
+      margin: 0;
+    }
     background: ${props => props.theme.darkGray};
     .text {
       margin: auto;
@@ -43,18 +46,21 @@ export const PageBody = styled.article`
     }
     ${mediaQuery.minTablet} {
       display: flex;
+      text-align: left;
+      .text {
+        margin-left: 0;
+        max-width: ${props => props.theme.medWidth};
+      }
       img {
         max-width: 40vw;
       }
-      > p {
-        margin-left: 0;
-      }
       &:nth-child(2n+1) {
-        > p {
-          margin-right: 0;
-        }
+        text-align: right;
         flex-direction: row-reverse;
         background: ${props => props.theme.mainGray};
+        .text {
+          margin-right: 0;
+        }
       }
     }
   }
