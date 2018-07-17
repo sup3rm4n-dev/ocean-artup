@@ -11,7 +11,10 @@ injectGlobal`
   body {
     background: url(${background}) no-repeat center center fixed; 
     background-size: cover;
-    color: ${props => props.theme.mainWhite};
+    text-align: justify;
+    a {
+      color: inherit;
+    }
   }
   #___gatsby {
     height: 100vh;
