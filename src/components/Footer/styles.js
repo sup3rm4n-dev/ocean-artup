@@ -9,11 +9,10 @@ export const Container = styled.footer`
   display: grid;
   justify-items: center;
   grid-gap: 1rem;
-  font-weight: lighter !important;
   a {
     color: ${props => props.theme.mainOrange}
   }
-  ${mediaQuery.minPhablet} {
+  ${mediaQuery.minTablet} {
     grid-auto-flow: column;
     grid-gap: 2rem;
     justify-content: center;
