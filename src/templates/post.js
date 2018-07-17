@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from '../components/Helmet'
 import PostTitle from '../components/PostTitle'
+import PageBody from '../components/PageBody'
 
 const PostTemplate = ({ data, location }) => {
   const { post, site } = data
@@ -14,7 +15,7 @@ const PostTemplate = ({ data, location }) => {
     <Layout>
       <Helmet pageTitle={title} site={site} path={path} description={excerpt} />
       <PostTitle title={title} date={date} timeToRead={timeToRead} />
-      <article dangerouslySetInnerHTML={{ __html: html }} />
+      <PageBody dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
