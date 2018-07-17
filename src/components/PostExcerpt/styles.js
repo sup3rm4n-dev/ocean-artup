@@ -21,11 +21,6 @@ export const Meta = styled.div`
   font-size: 0.9rem;
 `
 
-export const Categories = styled.p`
-  display: flex;
-  flex-wrap: wrap;
-`
-
 export const Category = styled.span`
   padding: 0 0.5rem;
   border-radius: ${props => props.theme.largeBorderRadius};
