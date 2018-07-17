@@ -9,6 +9,7 @@ const theme = {
   mainWhite: `white`,
   mainBlack: `black`,
 
+  medWidth: `30rem`,
   maxWidth: `45rem`,
 
   smallBorder: `0.1rem`,
