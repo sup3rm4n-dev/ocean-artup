@@ -1,33 +1,33 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import mediaQuery from '../../utils/mediaQuery'
-
 export const CategoryIcon = styled.img`
   height: 1.75rem;
   width: 1.75rem;
-  margin: 0 1rem 0 0;
-  background: ${props => props.theme.lightGray};
+  margin: 0 0.4rem 0 0;
   border-radius: ${props => props.theme.mediumBorderRadius};
   padding: 0.2rem;
 `
 
 export const CategoryLink = styled(Link)`
   display: flex;
-  white-space: nowrap;
+  padding: 0 0.5rem;
+  background: ${props => props.theme.lightGray};
+  border-radius: ${props => props.theme.mediumBorderRadius};
   &.${props => props.activeClassName} {
-    color: ${props => props.theme.mainOrange};
+    background: ${props => props.theme.mainOrange};
   }
 `
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   grid-gap: 1rem;
+  margin-bottom: 3rem;
 `
 
 export const ListTitle = styled.h1`
-  ${mediaQuery.minPhone} {
-    margin-top: 0;
-  }
+  margin: 0;
+  margin-right: 1rem;
 `
