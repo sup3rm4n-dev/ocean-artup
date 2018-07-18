@@ -5,7 +5,7 @@ import { List, ListTitle, CategoryIcon, CategoryLink } from './styles'
 const Category = ({ category }) => {
   const { title, slug, icon } = category
   const link = `/blog` + (slug ? `/` + slug : ``)
-  return <CategoryLink exact activeClassName to={link} >
+  return <CategoryLink exact activeClassName='active' to={link} >
     {icon && <CategoryIcon src={icon.file.url} alt={icon.title} />}
     {title}
   </CategoryLink>

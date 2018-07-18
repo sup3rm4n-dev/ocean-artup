@@ -41,7 +41,7 @@ class Header extends React.Component {
         {header.nav.map(item => (
             <NavLink
               onClick={this.toggleNav}
-              activeClassName
+              activeClassName='active'
               key={item.url}
               to={item.url}
               title={item.title}
