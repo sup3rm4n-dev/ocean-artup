@@ -1,14 +1,12 @@
 import React from 'react'
 
-import { Container, Title, Meta, BackLink } from './styles'
-import { DateIcon, TimeIcon } from '../Icons'
+import { Container, Title, BackLink } from './styles'
+import PostMeta from '../PostMeta'
 
-const PostTitle = props => (
+const PostTitle = ({ post }) => (
   <Container>
-    <Title>{props.title}</Title>
-    <Meta>
-      <DateIcon />&ensp;{props.date}&ensp;|&ensp;<TimeIcon /> {props.timeToRead} min read
-    </Meta>
+    <Title>{post.title}</Title>
+    <PostMeta inTitle {...post} />
     <BackLink to='/blog'>Back to blog</BackLink>
   </Container>
 )
