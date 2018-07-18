@@ -1,22 +1,31 @@
 import React from 'react'
 
-import { Article, Title, TitleLink, Meta, Category } from './styles'
-import { DateIcon, TimeIcon } from '../Icons'
+import { Article, Title, TitleLink, Meta, Category, AuthorPhoto } from './styles'
+import { DateIcon, TimeIcon, CreateIcon } from '../Icons'
 
-const PostExcerpt = ({ post }) => (
+const PostExcerpt = ({ post: { title, slug, author, date, categories, body } }) => (
   <Article>
     <Title>
-      <TitleLink to={'/blog/' + post.slug}>
-        {post.title}
+      <TitleLink to={'/blog/' + slug}>
+        {title}
       </TitleLink>
     </Title>
     <Meta>
-      <DateIcon />&ensp;{post.date}&ensp;|&ensp;<TimeIcon /> {post.body.data.timeToRead} min read
-      &ensp;|&ensp;<span>{post.categories.map(category =>
+      <CreateIcon />
+      &nbsp;<a href={`mailto:${author.email}`}>{author.name}</a>
+      <AuthorPhoto src={author.photo.file.url} />
+      &ensp;|&ensp;
+      <DateIcon />
+      &ensp;{date}
+      &ensp;|&ensp;
+      <TimeIcon />
+      &ensp;{body.data.timeToRead} min read
+      &ensp;|&ensp;
+      <span>{categories.map(category =>
         <Category>{category.title}</Category>
       )}</span>
     </Meta>
-    <p dangerouslySetInnerHTML={{ __html: post.body.data.excerpt }} />
+    <p dangerouslySetInnerHTML={{ __html: body.data.excerpt }} />
   </Article>
 )
 

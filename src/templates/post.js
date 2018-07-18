@@ -26,6 +26,15 @@ export const postQuery = graphql`
   fragment postFields on ContentfulBlogPost {
     slug
     title
+    author {
+      name
+      email
+      photo {
+        file {
+          url
+        }
+      }
+    }
     categories: category {
       title
     }

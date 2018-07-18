@@ -47,6 +47,7 @@ export const PageBody = styled.article`
     ${mediaQuery.minTablet} {
       display: flex;
       text-align: left;
+      max-height: 25rem;
       .text {
         margin-left: 0;
         max-width: ${props => props.theme.medWidth};

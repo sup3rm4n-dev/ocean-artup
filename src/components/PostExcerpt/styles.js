@@ -17,7 +17,11 @@ export const TitleLink = styled(Link)`
 `
 
 export const Meta = styled.div`
-  margin-bottom: 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  margin: 1.3rem 0 1rem;
   font-size: 0.9rem;
 `
 
@@ -26,4 +30,10 @@ export const Category = styled.span`
   border-radius: ${props => props.theme.largeBorderRadius};
   background: ${props => props.theme.lightGray};
   margin-left: 0.5rem;
+`
+
+export const AuthorPhoto = styled.img`
+  width: 2rem;
+  border-radius: 50%;
+  margin: 0 0 0 0.5rem;
 `
