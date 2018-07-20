@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Meta, Category, AuthorPhoto } from './styles'
-import { DateIcon, TimeIcon, CreateIcon } from '../Icons'
+import { DateIcon, TimeIcon, CreateIcon } from '../styles/Icons'
 
 const PostMeta = ({ author, date, categories, body, inTitle }) => (
   <Meta inTitle={inTitle} >

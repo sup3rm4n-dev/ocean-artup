@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import mediaQuery from '../../utils/mediaQuery'
-
 export const Meta = styled.div`
   display: flex;
   flex-wrap: wrap;

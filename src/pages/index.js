@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
-import LandingPageBody from '../components/LandingPageBody'
+import LandingPageBody from '../components/styles/LandingPageBody'
 
 const LandingPage = ({ data, location }) => {
   const { page, site } = data

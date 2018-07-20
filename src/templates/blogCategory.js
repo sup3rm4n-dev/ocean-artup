@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
+import PageBody from '../components/styles/PageBody'
 import CategoryList from '../components/CategoryList'
 import PostsList from '../components/PostsList'
 
