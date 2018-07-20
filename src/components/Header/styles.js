@@ -24,26 +24,17 @@ export const Content = styled.header`
   ${mediaQuery.minTablet} {
     justify-content: center;
     padding: 1rem 2rem;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
   }
-`
-
-export const Logo = styled.div`
-  height: 2rem;
-  width: 2rem;
-  padding: 0.2rem;
-  border-radius: 50%;
-  background: ${props => props.theme.mainWhite};;
-  overflow: hidden;
 `
 
 export const SiteTitle = styled(Link)`
   ${navLinkStyle};
-  font-weight: bold;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  grid-gap: 0.5rem;
+`
+
+export const Logo = styled.img`
+  width: 6rem;
+  margin: 0;
 `
 
 export const Nav = styled.nav`

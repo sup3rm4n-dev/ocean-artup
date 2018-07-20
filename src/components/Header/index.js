@@ -4,7 +4,7 @@ import {
   Content, Logo, SiteTitle,
   Nav, NavLink, ToggleNav
 } from './styles'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 
 class Header extends React.Component {
   state = { hideNav: true }
@@ -31,10 +31,7 @@ class Header extends React.Component {
     const { meta, header } = this.props
     return <Content>
       <SiteTitle to="/" title={meta.title} rel="home">
-        <Logo>
-          <img src={logo} alt="Logo" />
-        </Logo>
-        {meta.title}
+        <Logo src={logo} alt="Logo" />
       </SiteTitle>
       <Nav innerRef={node => this.node = node} hideNav={this.state.hideNav}>
         <ToggleNav inside onClick={this.toggleNav}>&times;</ToggleNav>
