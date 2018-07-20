@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import Helmet from 'react-helmet'
 
 import Header from './Header'
 import Footer from './Footer'
 import theme from '../utils/theme'
 import background from '../assets/background.jpg'
+import favicon from '../assets/favicon.png'
 
 injectGlobal`
   body {
@@ -54,10 +56,6 @@ const Layout = ({ children }) => (
           data {
             copyright
             authorsNote
-            links {
-              url
-              title
-            }
           }
         }
       }
@@ -65,6 +63,9 @@ const Layout = ({ children }) => (
     render={({ header, footer, site }) => (
       <ThemeProvider theme={theme}>
         <Fragment>
+          <Helmet>
+            <link rel="icon" type="image/png" href={favicon} />
+          </Helmet>
           <Header meta={site.meta} header={header.data} />
           <Content>{children}</Content>
           <Footer footer={footer.data} />
