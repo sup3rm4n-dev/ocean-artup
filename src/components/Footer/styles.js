@@ -18,9 +18,3 @@ export const Container = styled.footer`
     justify-content: center;
   }
 `
-
-export const FooterNav = styled.nav`
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 1.5rem;
-`
