@@ -14,13 +14,17 @@ const headerStyles = ({ fontSize, maxFontSize }) => css`
 
 export const Container = styled.header`
   text-align: center;
-  margin: 10vh 0;
+  margin: 8vh 0 14vh;
+  ${mediaQuery.minLaptop} {
+    margin: 10vh 0 16vh;
+  }
 `
 
 export const Title = styled.h1`
-  ${headerStyles({ fontSize: `10vw`, maxFontSize: `6rem` })};
+  ${headerStyles({ fontSize: `10vw`, maxFontSize: `4.5rem` })};
+  margin-bottom: 4rem;
 `
 
 export const Subtitle = styled.h2`
-  ${headerStyles({ fontSize: `5vw`, maxFontSize: `3rem` })};
+  ${headerStyles({ fontSize: `4vw`, maxFontSize: `2rem` })};
 `
