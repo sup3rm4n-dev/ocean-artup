@@ -17,16 +17,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-images-contentful`,
-            options: {
-              // maxWidth (in pixels) of content container
-              // used as base for generating different widths of each image
-              maxWidth: 880,
-              showCaptions: true,
-              backgroundColor: `none`,
-            },
-          },
           `gatsby-remark-smartypants`,
           `gatsby-remark-embed-video`,
           `gatsby-remark-responsive-iframe`,

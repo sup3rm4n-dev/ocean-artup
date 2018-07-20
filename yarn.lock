@@ -4817,18 +4817,6 @@ gatsby-remark-embed-video@^1.4.0:
     get-video-id "^3.1.0"
     unist-util-visit "^1.3.1"
 
-gatsby-remark-images-contentful@next:
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images-contentful/-/gatsby-remark-images-contentful-2.0.0-beta.2.tgz#c12470227d5e1b2ed28a09e23d07018048d0dd5e"
-  dependencies:
-    "@babel/runtime" "7.0.0-beta.51"
-    axios "^0.18.0"
-    cheerio "^1.0.0-rc.2"
-    is-relative-url "^2.0.0"
-    lodash "^4.17.4"
-    sharp "^0.20.2"
-    unist-util-select "^1.5.0"
-
 gatsby-remark-responsive-iframe@^1.4.20:
   version "1.4.20"
   resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-1.4.20.tgz#fd72b9ffee8846cb29e546090968bc9cf6d3c85f"
