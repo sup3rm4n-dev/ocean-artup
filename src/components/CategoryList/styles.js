@@ -12,6 +12,7 @@ export const CategoryIcon = styled.img`
 export const CategoryLink = styled(Link)`
   display: flex;
   padding: 0 0.5rem;
+  color: ${props => props.theme.darkGray} !important;
   background: ${props => props.theme.lightGray};
   border-radius: ${props => props.theme.mediumBorderRadius};
   &.${props => props.activeClassName} {
