@@ -3,10 +3,8 @@ import styled, { css } from 'styled-components'
 export const Meta = styled.div`
   display: flex;
   flex-wrap: wrap;
-  * {
-    margin: 0;
-  }
   > span {
+    margin: 0;
     display: flex;
     align-items: center;
   }
@@ -38,7 +36,7 @@ export const Category = styled.span`
 `
 
 export const AuthorPhoto = styled.img`
-  width: 2rem;
+  width: 2rem !important;
   border-radius: 50%;
   margin: 0 0 0 0.5rem;
 `
