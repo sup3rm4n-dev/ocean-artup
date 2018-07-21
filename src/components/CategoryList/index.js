@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-import { List, ListTitle, CategoryIcon, CategoryLink } from './styles'
+import { List, CategoryIcon, CategoryLink } from './styles'
 
 const Category = ({ category }) => {
   const { title, slug, icon } = category
@@ -12,13 +12,15 @@ const Category = ({ category }) => {
 }
 
 const CategoryList = ({ title, categories }) => (
-  <List>
-    <ListTitle>{title}</ListTitle>
-    <Category category={{ title: `All` }} />
-    {categories.map(({ node: category }) =>
-      <Category key={category.slug} category={category} />
-    )}
-  </List>
+  <Fragment>
+    <h1>{title}</h1>
+    <List>
+      <Category category={{ title: `All` }} />
+      {categories.map(({ node: category }) =>
+        <Category key={category.slug} category={category} />
+      )}
+    </List>
+  </Fragment>
 )
 
 export default CategoryList
