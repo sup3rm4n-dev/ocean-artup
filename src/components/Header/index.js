@@ -6,6 +6,8 @@ import {
 } from './styles'
 import logo from '../../assets/logo.svg'
 
+const events = ['mousedown', 'touchstart']
+
 class Header extends React.Component {
   state = { hideNav: true }
 
@@ -20,11 +22,15 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
+    events.forEach(event =>
+      document.addEventListener(event, this.handleClickOutside)
+    )
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
+    events.forEach(event =>
+      document.removeEventListener(event, this.handleClickOutside)
+    )
   }
   
   render() {
