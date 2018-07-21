@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import mediaQuery from '../../utils/mediaQuery'
 
 const navLinkStyle = css`
+  color: inherit;
   &:hover {
     color: ${props => props.theme.mainOrange};
     text-decoration: none;
@@ -15,13 +16,13 @@ const navLinkStyle = css`
 
 export const Content = styled.header`
   color: ${props => props.theme.mainWhite};
-  padding: 1rem 2rem 1rem 1.25rem;
+  padding: 1rem 2rem;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
-  ${mediaQuery.minTablet} {
+  ${mediaQuery.minLaptop} {
     justify-content: center;
     padding: 1rem 2rem;
     grid-gap: 3rem;
@@ -40,11 +41,11 @@ export const Logo = styled.img`
 export const Nav = styled.nav`
   display: grid;
   overflow: scroll;
-  ${mediaQuery.minTablet} {
+  ${mediaQuery.minLaptop} {
     grid-auto-flow: column;
     grid-gap: 2rem;
   }
-  ${mediaQuery.tablet} {
+  ${mediaQuery.laptop} {
     position: fixed;
     right: 0;
     border-left: ${({theme}) => theme.smallBorder + ' solid ' + theme.mainBlack};
@@ -66,17 +67,16 @@ export const NavLink = styled(Link)`
 
 export const ToggleNav = styled.button`
   color: inherit;
-  transform: scale(1.5);
+  transform: scale(2);
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
   outline: none;
-  ${mediaQuery.minTablet} {
+  ${mediaQuery.minLaptop} {
     display: none;
   }
   ${props => props.inside && `
-    transform: scale(2);
     position: absolute;
     top: 0.7rem;
     right: 1.3rem;
