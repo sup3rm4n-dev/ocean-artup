@@ -40,7 +40,6 @@ export const Logo = styled.img`
 
 export const Nav = styled.nav`
   display: grid;
-  overflow: scroll;
   ${mediaQuery.minLaptop} {
     grid-auto-flow: column;
     grid-gap: 2rem;
