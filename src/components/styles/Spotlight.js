@@ -37,7 +37,7 @@ const Spotlight = css`
         max-width: ${props => props.theme.medWidth};
       }
       img {
-        max-width: 40vw;
+        width: 45vw;
       }
       &:nth-child(2n+1) {
         text-align: right;

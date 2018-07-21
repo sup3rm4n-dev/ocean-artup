@@ -34,7 +34,6 @@ const Participants = css`
     }
     ${mediaQuery.tablet} {
       grid-gap: 1rem;
-      grid-auto-rows: minmax(2rem, 5rem);
       h1, h2, h3, h4 {
         grid-column: 1/-1;
       }
