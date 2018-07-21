@@ -11,15 +11,12 @@ import favicon from '../assets/favicon.png'
 
 injectGlobal`
   body {
-    background: url(${background}) no-repeat center center fixed; 
+    background: url(${background}) no-repeat center fixed; 
     background-size: cover;
-    text-align: justify;
-    a {
-      color: inherit;
-    }
   }
   #___gatsby {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     background: rgba(0, 0, 0, 0.3);
