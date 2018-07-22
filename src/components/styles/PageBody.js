@@ -10,7 +10,7 @@ export const PageBody = styled.article`
   ${mediaQuery.minPhablet} {
     text-align: justify;
   }
-  * {
+  > * {
     max-width: ${props => props.theme.maxWidth};
     margin-left: auto;
     margin-right: auto;
