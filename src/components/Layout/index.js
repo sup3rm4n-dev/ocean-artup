@@ -1,32 +1,13 @@
 import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
 
-import Header from './Header'
-import Footer from './Footer'
-import theme from '../utils/theme'
-import background from '../assets/background.jpg'
-import favicon from '../assets/favicon.png'
-
-injectGlobal`
-  body {
-    background: url(${background}) no-repeat center fixed; 
-    background-size: cover;
-  }
-  #___gatsby {
-    height: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    background: rgba(0, 0, 0, 0.3);
-  }
-`
-
-const Content = styled.main`
-  display: grid;
-  grid-template-rows: auto 1fr;
-`
+import Header from '../Header'
+import Footer from '../Footer'
+import { Content } from './styles'
+import theme from '../../utils/theme'
+import favicon from '../../assets/favicon.png'
 
 const Layout = ({ children }) => (
   <StaticQuery
