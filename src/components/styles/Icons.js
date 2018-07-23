@@ -6,6 +6,7 @@ import { Create } from 'styled-icons/material/Create'
 
 const defaultHeight = css`
   height: ${props => props.size || '1rem'};
+  width: ${props => props.size || '1rem'};
 `
 
 export const DateIcon = styled(Calendar)`
