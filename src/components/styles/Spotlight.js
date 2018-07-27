@@ -1,51 +1,52 @@
-import { css } from 'styled-components'
+import styled from 'styled-components'
 
 import mediaQuery from '../../utils/mediaQuery'
 
-const Spotlight = css`
-  spotlight {
-    display: block;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+const Spotlight = styled.section`
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  a {
+    color: ${props => props.theme.mainOrange};
+    :hover {
+      color: darkorange;
     }
-    a {
-      color: ${props => props.theme.mainOrange};
+  }
+  > p {
+    margin: 0;
+  }
+  background: ${props => props.theme.darkGray};
+  .text {
+    margin: auto;
+    padding: 3rem;
+    p {
+      max-width: ${props => props.theme.maxWidth};
+      margin-top: 1.5rem;
     }
-    > p {
-      margin: 0;
+    ${mediaQuery.phone} {
+      padding: 2rem 1rem;
     }
-    background: ${props => props.theme.darkGray};
+  }
+  ${mediaQuery.minTablet} {
+    display: flex;
+    text-align: left;
+    max-height: 25rem;
     .text {
-      margin: auto;
-      padding: 3rem;
-      p {
-        max-width: ${props => props.theme.maxWidth};
-        margin-top: 1.5rem;
-      }
-      ${mediaQuery.phone} {
-        padding: 2rem 1rem;
-      }
+      margin-left: 0;
+      max-width: ${props => props.theme.medWidth};
     }
-    ${mediaQuery.minTablet} {
-      display: flex;
-      text-align: left;
-      max-height: 25rem;
+    img {
+      width: 45vw;
+    }
+    &:nth-child(2n+1) {
+      text-align: right;
+      flex-direction: row-reverse;
+      background: ${props => props.theme.mainGray};
       .text {
-        margin-left: 0;
-        max-width: ${props => props.theme.medWidth};
-      }
-      img {
-        width: 45vw;
-      }
-      &:nth-child(2n+1) {
-        text-align: right;
-        flex-direction: row-reverse;
-        background: ${props => props.theme.mainGray};
-        .text {
-          margin-right: 0;
-        }
+        margin-right: 0;
       }
     }
   }
