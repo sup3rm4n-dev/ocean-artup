@@ -4,18 +4,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
-import PageBody from '../components/styles/PageBody'
+import PageBody from '../components/PageBody'
 
 const PageTemplate = ({ data, location }) => {
   const { page, site } = data
   const { title, body } = page
-  const { excerpt, html } = body && body.data
+  const { excerpt, htmlAst } = body && body.data
   const path = location.pathname
   return (
     <Layout>
       <Helmet pageTitle={title} site={site} path={path} description={excerpt} />
       <PageTitle title={title} />
-      {html && <PageBody dangerouslySetInnerHTML={{__html: html}} />}
+      {htmlAst && <PageBody htmlAst={htmlAst} />}
     </Layout>
   )
 }
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
       body {
         data: childMarkdownRemark {
           excerpt
-          html
+          htmlAst
         }
       }
     }

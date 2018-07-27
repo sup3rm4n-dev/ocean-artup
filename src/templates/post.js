@@ -4,18 +4,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Helmet from '../components/Helmet'
 import PostTitle from '../components/PostTitle'
-import PageBody from '../components/styles/PageBody'
+import PageBody from '../components/PageBody'
 
 const PostTemplate = ({ data, location }) => {
   const { post, site } = data
   const { title, body } = post
-  const { html, excerpt } = body.data
+  const { htmlAst, excerpt } = body.data
   const path = location.pathname
   return (
     <Layout>
       <Helmet pageTitle={title} site={site} path={path} description={excerpt} />
       <PostTitle post={post} />
-      <PageBody dangerouslySetInnerHTML={{ __html: html }} />
+      <PageBody htmlAst={htmlAst} />
     </Layout>
   )
 }
@@ -42,7 +42,7 @@ export const postQuery = graphql`
     date(formatString: "MMMM DD, YYYY")
     body {
       data: childMarkdownRemark {
-        html
+        htmlAst
         timeToRead
         excerpt(pruneLength: 250)
       }
