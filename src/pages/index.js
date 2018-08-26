@@ -13,7 +13,7 @@ const LandingPage = ({ data, location }) => {
   const path = location.pathname
   return (
     <Layout>
-      <Helmet pageTitle={title} site={site} path={path} description={excerpt} />
+      <Helmet site={site} path={path} description={excerpt} />
       <PageTitle title={title} subtitle={subtitle} />
       {htmlAst && <PageBody isLanding htmlAst={htmlAst} />}
     </Layout>
