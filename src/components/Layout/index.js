@@ -1,56 +1,47 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
-import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 
+import Helmet from '../Helmet'
+import Background from '../Background'
 import Header from '../Header'
 import Footer from '../Footer'
-import { Content } from './styles'
 import theme from '../../utils/theme'
-import favicon from '../../assets/favicon.png'
+import Scroll from '../Scroll'
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-        {
-          site {
-          meta: siteMetadata {
-            title
-            url: siteUrl
-          }
-        }
-        header: contentfulJson(title: {eq: "Header"}) {
-          data {
-            external {
-              googleScholar
-            }
-            nav {
-              url
-              title
-            }
-          }
-        }
-        footer: contentfulJson(title: {eq: "Footer"}) {
-          data {
-            copyright
-            authorsNote
-          }
-        }
-      }
-    `}
-    render={({ header, footer, site }) => (
-      <ThemeProvider theme={theme}>
-        <Fragment>
-          <Helmet>
-            <link rel="icon" type="image/png" href={favicon} />
-          </Helmet>
-          <Header meta={site.meta} header={header.data} />
-          <Content>{children}</Content>
-          <Footer footer={footer.data} />
-        </Fragment>
-      </ThemeProvider>
-    )}
-  />
+import { Root, GlobalStyle } from './styles'
+
+const Layout = ({ children, site, path, ...rest }) => (
+  <ThemeProvider theme={theme}>
+    <Root>
+      <Helmet site={site.meta} path={path} {...rest} />
+      <GlobalStyle />
+      <Background path={path} />
+      <Header site={site.meta} />
+      {children}
+      <Footer />
+      <Scroll to="top" position="fixed" justify="right" showBelow={1000} />
+    </Root>
+  </ThemeProvider>
 )
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+const query = graphql`
+  {
+    site {
+      meta: siteMetadata {
+        title
+        url: siteUrl
+        description
+      }
+    }
+  }
+`
+
+export default props => (
+  <StaticQuery query={query} render={data => <Layout {...data} {...props} />} />
+)
