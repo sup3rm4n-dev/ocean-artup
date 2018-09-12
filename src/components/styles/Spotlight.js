@@ -36,12 +36,12 @@ const Spotlight = styled.section`
     max-height: 25rem;
     .text {
       margin-left: 0;
-      max-width: ${props => props.theme.medWidth};
+      max-width: ${props => props.theme.maxWidth};
     }
     img {
       width: 45vw;
     }
-    &:nth-child(2n+1) {
+    &:nth-child(2n + 1) {
       text-align: right;
       flex-direction: row-reverse;
       background: ${props => props.theme.mainGray};

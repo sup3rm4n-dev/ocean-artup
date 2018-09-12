@@ -4,17 +4,28 @@ import mediaQuery from '../../utils/mediaQuery'
 
 const Team = styled.div`
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: calc(0.5em + 4vmin);
   grid-template-columns: repeat(auto-fit, minmax(auto, 10rem));
   justify-content: center;
-  max-width: calc(${props => props.theme.maxWidth} + 10rem);
+  max-width: ${props => props.theme.maxWidth};
 
-  p:first-child, h1, h2, h3, h4, h5, h6 {
+  p:first-child,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     grid-column: 1/-1;
     max-width: 100%;
     text-align: center;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     white-space: nowrap;
     font-size: 2rem;
     ${mediaQuery.minPhone} {
@@ -23,6 +34,11 @@ const Team = styled.div`
     ${mediaQuery.minPhablet} {
       font-size: 3rem;
     }
+  }
+  .gatsby-resp-image-wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100%;
   }
 
   p {
@@ -35,7 +51,6 @@ const Team = styled.div`
       max-width: 10rem;
     }
     em {
-      white-space: nowrap;
       display: block;
       font-style: normal;
       font-weight: bold;

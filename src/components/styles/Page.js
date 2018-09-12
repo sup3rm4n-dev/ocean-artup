@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import mediaQuery from '../../utils/mediaQuery'
 
 const Page = styled.article`
+  grid-column: 3;
   background: ${props => props.theme.mainWhite};
-  padding: 10vw;
   ${mediaQuery.minPhablet} {
     text-align: justify;
   }
