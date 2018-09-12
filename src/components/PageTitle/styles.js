@@ -15,6 +15,9 @@ const headerTitleStyles = ({ fontSize, maxFontSize }) => css`
 `
 
 export const Container = styled.header`
+  z-index: 2;
+  grid-column: 1 / -1;
+  grid-row: 2;
   text-align: center;
   margin: 8vh 0 14vh;
   ${mediaQuery.minLaptop} {

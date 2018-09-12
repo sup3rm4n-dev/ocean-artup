@@ -5,7 +5,7 @@ import LogoComp from '../../assets/logo'
 import { navLinkStyle } from '../Nav/styles'
 
 export const Container = styled.div`
-  grid-column: 1 / -1 !important;
+  grid-column: 1 / -1;
   grid-row: 1;
   z-index: 2;
   align-self: start;
