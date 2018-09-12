@@ -1,28 +1,38 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
+import mediaQuery from '../../utils/mediaQuery'
+
+export const Container = styled.div`
+  grid-column: 3;
+  grid-row: 3;
+  margin-bottom: 5vh;
+  ${mediaQuery.minTablet} {
+    grid-column: 4;
+    grid-row: 3;
+  }
+`
+
 export const CategoryIcon = styled.img`
-  height: 1.75rem;
-  width: 1.75rem !important;
-  margin: 0 0.4rem 0 0;
-  padding: 0.2rem;
+  height: 1.75em;
+  width: 1.75em;
+  min-width: 1.75em;
+  margin-right: 0.7em;
+  background: ${props => props.theme.lightGray};
+  border-radius: ${props => props.theme.mediumBorderRadius};
+  padding: 0.2em;
 `
 
 export const CategoryLink = styled(Link)`
   display: flex;
-  width: max-content;
-  padding: 0 0.5rem;
-  margin: 0 1rem 1rem 0;
-  color: ${props => props.theme.darkGray} !important;
-  background: ${props => props.theme.lightGray};
-  border-radius: ${props => props.theme.mediumBorderRadius};
+  align-items: center;
   &.${props => props.activeClassName} {
-    background: ${props => props.theme.mainOrange};
+    color: ${props => props.theme.lightBlue};
   }
 `
 
 export const List = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  grid-gap: 1em;
 `
