@@ -2,38 +2,35 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import CategoryList from '../components/CategoryList'
-import PostsList from '../components/PostsList'
+import PostExcerpt from '../components/PostExcerpt'
 
-const blogCategoryTemplate = ({ data, location }) => {
-  const { activeCategory, site, posts, categories } = data
+const CategoryTemplate = ({ data, location }) => {
+  const { activeCategory, posts, categories } = data
   const title = `Blog`
   const { text } = activeCategory.description
   const path = location.pathname
-  return <Layout>
-    <Helmet pageTitle={title} site={site} path={path} description={text} />
-    <PageTitle title={title} />
-    <PageBody>
-      <CategoryList
-        title="Categories"
-        categories={categories.edges}
-      />
-      {posts && <PostsList posts={posts.edges} />}
-    </PageBody>
-  </Layout>
+  return (
+    <Layout pageTitle={title} path={path} description={text}>
+      <PageTitle title={title} />
+      <PageBody>
+        <CategoryList title="Categories" categories={categories.edges} />
+        {posts &&
+          posts.map(({ node }) => <PostExcerpt key={node.slug} post={node} />)}
+      </PageBody>
+    </Layout>
+  )
 }
 
-export default blogCategoryTemplate
+export default CategoryTemplate
 
-export const blogCategoryQuery = graphql`
+export const query = graphql`
   query($slug: String!) {
-    ...siteMetaQuery
     posts: allContentfulBlogPost(
-      sort: { fields: [ date ], order: DESC }
-      filter: { category: { slug: { eq: $slug } } }
+      sort: { fields: [date], order: DESC }
+      filter: { categories: { slug: { eq: $slug } } }
     ) {
       edges {
         node {
@@ -42,7 +39,7 @@ export const blogCategoryQuery = graphql`
       }
     }
     ...categories
-    activeCategory: contentfulBlogCategory(slug: {eq: $slug}) {
+    activeCategory: contentfulBlogCategory(slug: { eq: $slug }) {
       title
       slug
       description {
