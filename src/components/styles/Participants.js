@@ -3,37 +3,27 @@ import styled from 'styled-components'
 import mediaQuery from '../../utils/mediaQuery'
 
 const Participants = styled.section`
-  padding: 2rem;
-  background: ${props => props.theme.mainWhite};
+  padding: 5vh 5vw;
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 2em;
   justify-content: center;
-  justify-items: center;
   align-items: center;
-  h1, h2, h3, h4 {
-    width: 100%;
-    padding: 0.5rem 2rem;
+  h2 {
     background: ${props => props.theme.lightGreen};
-    border-radius: ${props => props.theme.largeBorderRadius};
+    border-radius: ${props => props.theme.mediumBorderRadius};
   }
-    p:first-child {
-      grid-column: 1/-1;
-      img {
-        max-width: 15rem;
-      }
+  p:first-child {
+    grid-column: 1/-1;
+    img {
+      max-width: 15em;
     }
+  }
   img {
     width: 100%;
-    max-height: 10rem;
-  }
-  ${mediaQuery.phone} {
-    h1, h2, h3, h4 {
-      font-size: 1rem;
-    }
+    max-height: 10em;
   }
   ${mediaQuery.tablet} {
-    grid-gap: 1rem;
-    h1, h2, h3, h4 {
+    h2 {
       grid-column: 1/-1;
     }
   }
@@ -41,11 +31,10 @@ const Participants = styled.section`
     grid-template-columns: auto auto;
   }
   ${mediaQuery.minTablet} {
-    grid-template-columns: repeat(3, minmax(10rem, 15rem));
+    grid-template-columns: repeat(3, minmax(10em, 15em));
     grid-template-rows: repeat(4, auto);
     grid-auto-flow: column;
-    h1, h2, h3, h4 {
-      white-space: nowrap;
+    h2 {
       grid-row: 2;
     }
   }
