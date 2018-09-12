@@ -34,13 +34,8 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.mainBlue};
     :hover {
-      color: ${props => props.theme.lightBlue};
+      color: ${props => props.theme.mainOrange} !important;
     }
-  }
-  #___gatsby > * {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
   .gatsby-image-outer-wrapper {
     display: contents;
@@ -49,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Root = styled.main`
   display: grid;
-  grid-gap: 0 2vw;
+  grid-gap: 0 4vw;
   grid-template-columns: 1fr 1fr minmax(auto, ${props => props.theme.maxWidth}) 1fr 1fr;
+  min-height: 100vh;
 `
