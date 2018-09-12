@@ -2,19 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
+import Scroll from '../components/Scroll'
 import PageBody from '../components/PageBody'
 
-const LandingPage = ({ data, location }) => {
-  const { page, site } = data
+const LandingPage = ({ data: { page }, location }) => {
   const { title, subtitle, body } = page
   const { excerpt, htmlAst } = body && body.data
-  const path = location.pathname
   return (
-    <Layout>
-      <Helmet site={site} path={path} description={excerpt} />
+    <Layout pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} subtitle={subtitle} />
+      <Scroll dir="down" to={1} justify="center" position="absolute" />
       {htmlAst && <PageBody isLanding htmlAst={htmlAst} />}
     </Layout>
   )
@@ -22,10 +20,9 @@ const LandingPage = ({ data, location }) => {
 
 export default LandingPage
 
-export const landingPageQuery = graphql`
-  query Landing {
-    ...siteMetaQuery
-    page: contentfulLandingPage(slug: {eq: "landing"}) {
+export const query = graphql`
+  {
+    page: contentfulPage(slug: { eq: "/" }) {
       title
       subtitle
       body {
