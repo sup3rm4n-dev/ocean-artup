@@ -3,18 +3,18 @@ import styled from 'styled-components'
 import mediaQuery from '../../utils/mediaQuery'
 
 export const Container = styled.footer`
+  grid-column: 1 / -1 !important;
   background-color: ${props => props.theme.darkGray};
-  padding: 3rem;
+  padding: 5vh 5vw;
   color: ${props => props.theme.mainWhite};
   display: grid;
   justify-items: center;
-  grid-gap: 1rem;
+  grid-gap: 4vh 6vw;
   a {
-    color: ${props => props.theme.mainOrange}
+    color: ${props => props.theme.mainOrange};
   }
-  ${mediaQuery.minTablet} {
+  ${mediaQuery.minPhone} {
     grid-auto-flow: column;
-    grid-gap: 2rem;
     justify-content: center;
   }
 `
