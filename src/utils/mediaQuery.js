@@ -1,19 +1,30 @@
+const min = width => `@media only screen and (min-width: ${width}em)`
+const max = width => `@media only screen and (max-width: ${width}em)`
+
+export const screenSize = {
+  // screen sizes in em units
+  phone: 30,
+  phablet: 40,
+  tablet: 50,
+  netbook: 60,
+  laptop: 70,
+  desktop: 100,
+}
+
 const mediaQuery = {
-  phoneWidth: `20rem`,
-  phabletWidth: `30rem`,
-  tabletWidth: `45rem`,
-  laptopWidth: `55rem`,
-  desktopWidth: `70rem`,
-  phone: () => `@media only screen and (max-width: ${mediaQuery.phoneWidth})`,
-  phablet: () => `@media only screen and (max-width: ${mediaQuery.phabletWidth})`,
-  tablet: () => `@media only screen and (max-width: ${mediaQuery.tabletWidth})`,
-  laptop: () => `@media only screen and (max-width: ${mediaQuery.laptopWidth})`,
-  desktop: () => `@media only screen and (max-width: ${mediaQuery.desktopWidth})`,
-  minPhone: () => `@media only screen and (min-width: ${mediaQuery.phoneWidth})`,
-  minPhablet: () => `@media only screen and (min-width: ${mediaQuery.phabletWidth})`,
-  minTablet: () => `@media only screen and (min-width: ${mediaQuery.tabletWidth})`,
-  minLaptop: () => `@media only screen and (min-width: ${mediaQuery.laptopWidth})`,
-  minDesktop: () => `@media only screen and (min-width: ${mediaQuery.desktopWidth})`,
+  phone: max(screenSize.phone),
+  tablet: max(screenSize.tablet),
+  phablet: max(screenSize.phablet),
+  netbook: max(screenSize.netbook),
+  laptop: max(screenSize.laptop),
+  desktop: max(screenSize.desktop),
+
+  minPhone: min(screenSize.phone),
+  minTablet: min(screenSize.tablet),
+  minPhablet: min(screenSize.phablet),
+  minNetbook: min(screenSize.netbook),
+  minLaptop: min(screenSize.laptop),
+  minDesktop: min(screenSize.desktop),
 }
 
 export default mediaQuery
