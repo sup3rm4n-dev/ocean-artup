@@ -1,24 +1,31 @@
 const theme = {
   mainBlue: `#2A4FA8`,
   lightBlue: `#97C9F4`,
+
   lightGreen: `#0fc5b6`,
+
   mainOrange: `#ecb517`,
+
   lightGray: `#dcdcdc`,
   mainGray: `#2b363f`,
   darkGray: `#1d242a`,
+
   mainWhite: `white`,
   mainBlack: `black`,
 
-  medWidth: `30rem`,
-  maxWidth: `45rem`,
+  maxWidth: `40em`,
 
-  smallBorder: `0.1rem`,
-  mediumBorder: `0.2rem`,
-  largeBorder: `0.4rem`,
-  
-  smallBorderRadius: `0.2rem`,
-  mediumBorderRadius: `0.5rem`,
-  largeBorderRadius: `1rem`,
+  smallBorder: `0.1em`,
+  mediumBorder: `0.15em`,
+  largeBorder: `0.2em`,
+
+  smallBorderRadius: `0.2em`,
+  mediumBorderRadius: `0.5em`,
+  largeBorderRadius: `1em`,
+
+  shortTrans: `0.3s`,
+  mediumTrans: `0.6s`,
+  longTrans: `1s`,
 }
 
 export default theme
