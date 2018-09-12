@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Container, Title, Subtitle } from './styles'
+import { Container } from './styles'
 
 const PageTitle = ({ title, subtitle }) => (
   <Container>
-    <Title>{title}</Title>
-    {subtitle && <Subtitle>{subtitle}</Subtitle>}
+    <h1>{title}</h1>
+    {subtitle && <h2>{subtitle}</h2>}
   </Container>
 )
 
