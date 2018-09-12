@@ -3,15 +3,10 @@ import { Link } from 'gatsby'
 
 export const Article = styled.article`
   & + & {
-    margin-top: 3rem;
+    margin-top: 2em;
   }
 `
 
-export const Title = styled.h1`
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
-`
-
-export const TitleLink = styled(Link)`
-  color: ${props => props.theme.lightGreen};
+export const Title = styled(Link)`
+  font-size: 1.6em;
 `

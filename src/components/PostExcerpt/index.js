@@ -1,15 +1,11 @@
 import React from 'react'
 
-import { Article, Title, TitleLink } from './styles'
+import { Article, Title } from './styles'
 import PostMeta from '../PostMeta'
 
 const PostExcerpt = ({ post, post: { title, slug, body } }) => (
   <Article>
-    <Title>
-      <TitleLink to={'/blog/' + slug}>
-        {title}
-      </TitleLink>
-    </Title>
+    <Title to={'/blog/' + slug}>{title}</Title>
     <PostMeta {...post} />
     <p dangerouslySetInnerHTML={{ __html: body.data.excerpt }} />
   </Article>
