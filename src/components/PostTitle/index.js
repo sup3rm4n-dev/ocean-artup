@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { Container, Title, BackLink } from './styles'
+import { Container } from './styles'
 import PostMeta from '../PostMeta'
 
 const PostTitle = ({ post }) => (
   <Container>
-    <Title>{post.title}</Title>
+    <h1>{post.title}</h1>
     <PostMeta inTitle {...post} />
-    <BackLink to='/blog'>Back to blog</BackLink>
   </Container>
 )
 
