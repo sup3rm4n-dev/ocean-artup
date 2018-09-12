@@ -15,8 +15,8 @@ const CategoryTemplate = ({ data, location }) => {
   return (
     <Layout pageTitle={title} path={path} description={text}>
       <PageTitle title={title} />
+      <CategoryList categories={categories.edges} />
       <PageBody>
-        <CategoryList title="Categories" categories={categories.edges} />
         {posts &&
           posts.edges.map(({ node }) => (
             <PostExcerpt key={node.slug} post={node} />

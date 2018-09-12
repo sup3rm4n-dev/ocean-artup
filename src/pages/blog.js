@@ -13,8 +13,8 @@ const Blog = ({ data, location }) => {
   return (
     <Layout pageTitle={title} path={location.pathname}>
       <PageTitle title={title} />
+      <CategoryList categories={categories.edges} />
       <PageBody>
-        <CategoryList title="Categories" categories={categories.edges} />
         {posts &&
           posts.edges.map(({ node }) => (
             <PostExcerpt key={node.slug} post={node} />
