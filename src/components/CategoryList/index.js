@@ -1,26 +1,41 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { List, CategoryIcon, CategoryLink } from './styles'
+import { Container, List, CategoryIcon, CategoryLink } from './styles'
 
-const Category = ({ category }) => {
-  const { title, slug, icon } = category
-  const link = `/blog` + (slug ? `/` + slug : ``)
-  return <CategoryLink exact activeClassName='active' to={link} >
+const Category = ({ title, slug, icon }) => (
+  <CategoryLink exact activeClassName="active" to={`/blog/` + slug}>
     {icon && <CategoryIcon src={icon.file.url} alt={icon.title} />}
     {title}
   </CategoryLink>
-}
+)
 
 const CategoryList = ({ title, categories }) => (
-  <Fragment>
+  <Container>
     <h1>{title}</h1>
     <List>
-      <Category category={{ title: `All` }} />
-      {categories.map(({ node: category }) =>
-        <Category key={category.slug} category={category} />
-      )}
+      {categories.map(({ node }) => (
+        <Category key={node.slug} {...node} />
+      ))}
     </List>
-  </Fragment>
+  </Container>
 )
 
 export default CategoryList
+
+CategoryList.propTypes = {
+  title: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        icon: PropTypes.object.isRequired,
+      }),
+    })
+  ).isRequired,
+}
+
+CategoryList.defaultProps = {
+  title: `Categories`,
+}
