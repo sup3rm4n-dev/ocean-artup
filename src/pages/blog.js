@@ -2,35 +2,34 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Helmet from '../components/Helmet'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import CategoryList from '../components/CategoryList'
-import PostsList from '../components/PostsList'
+import PostExcerpt from '../components/PostExcerpt'
 
 const Blog = ({ data, location }) => {
   const title = `Blog`
   const { posts, categories } = data
-  const path = location.pathname
-  return <Layout>
-    <Helmet pageTitle={title} site={data.site} path={path} />
-    <PageTitle title={title} />
-    <PageBody>
-      <CategoryList
-        title="Categories"
-        categories={categories.edges}
-      />
-      {posts && <PostsList posts={posts.edges} />}
-    </PageBody>
-  </Layout>
+  return (
+    <Layout pageTitle={title} path={location.pathname}>
+      <PageTitle title={title} />
+      <PageBody>
+        <CategoryList title="Categories" categories={categories.edges} />
+        {posts &&
+          posts.edges.map(({ node }) => (
+            <PostExcerpt key={node.slug} post={node} />
+          ))}
+      </PageBody>
+    </Layout>
+  )
 }
 
 export default Blog
 
-export const blogIndexQuery = graphql`
-  fragment categories on RootQueryType {
+export const query = graphql`
+  fragment categories on Query {
     categories: allContentfulBlogCategory(
-      sort: { fields: [title], order: ASC}
+      sort: { fields: [title], order: ASC }
     ) {
       edges {
         node {
@@ -47,10 +46,7 @@ export const blogIndexQuery = graphql`
     }
   }
   {
-    ...siteMetaQuery
-    posts: allContentfulBlogPost(
-      sort: { fields: [ date ], order: DESC }
-    ) {
+    posts: allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           ...postFields
