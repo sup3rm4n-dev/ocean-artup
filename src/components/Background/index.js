@@ -17,7 +17,7 @@ Background.propTypes = {
 const query = graphql`
   {
     background: contentfulAsset(title: { eq: "Background" }) {
-      fluid(quality: 100) {
+      fluid(quality: 100, maxWidth: 2400) {
         ...GatsbyContentfulFluid_withWebp
       }
     }
