@@ -65,6 +65,7 @@ export default class Nav extends Component {
               activeClassName="active"
               to={item.url}
               title={item.title}
+              onClick={this.toggleNav}
             >
               {item.title}
             </NavLink>
