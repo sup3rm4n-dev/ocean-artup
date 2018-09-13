@@ -9,7 +9,4 @@ export const Container = styled.header`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  a {
-    color: inherit;
-  }
 `
