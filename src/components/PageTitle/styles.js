@@ -7,4 +7,7 @@ export const Container = styled.header`
   text-align: center;
   color: ${props => props.theme.mainWhite};
   font-size: calc(1em + 1vw);
+  h2 {
+    margin-top: 2.5em;
+  }
 `
