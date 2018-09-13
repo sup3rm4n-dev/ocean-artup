@@ -9,4 +9,5 @@ export const Article = styled.article`
 
 export const Title = styled(Link)`
   font-size: 1.6em;
+  font-weight: bold;
 `
