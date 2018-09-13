@@ -1,27 +1,33 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import LogoComp from '../../assets/logo'
 import { navLinkStyle } from '../Nav/styles'
+import mediaQuery from '../../utils/mediaQuery'
 
-export const Container = styled.div`
+export const Container = styled.header`
   grid-column: 1 / -1;
   grid-row: 1;
-  z-index: 2;
+  z-index: 3;
   align-self: start;
   background: rgba(0, 0, 0, 0.5);
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 5vmin;
+  grid-gap: 3vw;
   align-items: center;
-  padding: 2vmin 3vmin;
-  justify-content: center;
+  padding: 1vh 3vw;
+  justify-content: space-between;
+  ${mediaQuery.tablet} {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const SiteTitle = styled(Link)`
-  ${navLinkStyle};
-`
-
-export const Logo = styled(LogoComp)`
   width: 5em;
+  display: inline-grid;
+  ${navLinkStyle};
+  grid-column: 1 / -1;
+  ${mediaQuery.phablet} {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: center;
+  }
 `

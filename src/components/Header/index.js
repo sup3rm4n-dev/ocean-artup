@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Container, Logo, SiteTitle } from './styles'
+import { Container, SiteTitle } from './styles'
 import Nav from '../Nav'
+import Logo from '../../assets/logo'
 
 const Header = ({ site }) => (
   <Container>
