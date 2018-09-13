@@ -1,30 +1,67 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
-import { Meta, Categories, Category, AuthorPhoto } from './styles'
-import { DateIcon, TimeIcon, CreateIcon } from '../styles/Icons'
+import { UserEdit } from 'styled-icons/fa-solid/UserEdit'
+import { Calendar as Date } from 'styled-icons/octicons/Calendar'
+import { Timer } from 'styled-icons/material/Timer'
 
-const PostMeta = ({ author, date, categories, body, inTitle }) => (
+import { Meta, AuthorPhoto } from './styles'
+
+const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
   <Fragment>
-    <Meta inTitle={inTitle} >
+    <Meta inTitle={inTitle}>
       <span>
-        <CreateIcon />
+        <UserEdit size={iconSize} />
         &nbsp;
         <a href={`mailto:${author.email}`}>{author.name}</a>
         <AuthorPhoto src={author.photo.file.url} />
       </span>
       <span>
-        <DateIcon />
-        &ensp;{date}
+        <Date size={iconSize} />
+        &ensp;
+        {date}
       </span>
       <span>
-        <TimeIcon />
-        &ensp;{body.data.timeToRead} min read
+        <Timer size={iconSize} />
+        &ensp;
+        {body.data.timeToRead} min read
       </span>
     </Meta>
-    <Categories>{categories.map(category =>
-      <Category key={category.slug}>{category.title}</Category>
-    )}</Categories>
+    {!inTitle && (
+      <div>
+        <span>Categories: </span>
+        {categories.map((category, index) => (
+          <Fragment>
+            {!!index && ', '}
+            <Link key={category.slug} to={`blog/` + category.slug}>
+              {category.title}
+            </Link>
+          </Fragment>
+        ))}
+      </div>
+    )}
   </Fragment>
 )
 
 export default PostMeta
+
+PostMeta.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    photo: PropTypes.object.isRequired,
+  }).isRequired,
+  date: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  body: PropTypes.object.isRequired,
+}
+
+PostMeta.defaultProps = {
+  iconSize: '1.4em',
+}
