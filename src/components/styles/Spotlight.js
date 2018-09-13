@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import mediaQuery from '../../utils/mediaQuery'
 
 const Spotlight = styled.section`
-  display: block;
   img {
     width: 100%;
     height: 100%;
@@ -12,7 +11,7 @@ const Spotlight = styled.section`
   a {
     color: ${props => props.theme.mainOrange};
     :hover {
-      color: darkorange;
+      color: ${props => props.theme.mainYellow} !important;
     }
   }
   > p {
@@ -20,20 +19,15 @@ const Spotlight = styled.section`
   }
   background: ${props => props.theme.darkGray};
   .text {
-    margin: auto;
-    padding: 3rem;
+    padding: 3vh 3vw;
     p {
-      max-width: ${props => props.theme.maxWidth};
-      margin-top: 1.5rem;
-    }
-    ${mediaQuery.phone} {
-      padding: 2rem 1rem;
+      max-width: 25em;
+      margin: auto;
     }
   }
   ${mediaQuery.minTablet} {
     display: flex;
     text-align: left;
-    max-height: 25rem;
     .text {
       margin-left: 0;
       max-width: ${props => props.theme.maxWidth};
