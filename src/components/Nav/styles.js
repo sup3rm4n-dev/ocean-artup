@@ -10,20 +10,15 @@ export const navLinkStyle = css`
     color: ${props => props.theme.mainOrange};
   }
   &.${props => props.activeClassName} {
-    border-bottom: ${({ theme }) =>
-      theme.smallBorder + ` solid ` + theme.mainWhite};
-    :hover {
-      border-bottom: ${({ theme }) =>
-        theme.smallBorder + ` solid ` + theme.mainOrange};
-    }
+    color: ${props => props.theme.mainOrange};
   }
 `
 
 export const Container = styled.nav`
   display: grid;
-  grid-gap: 2vw;
+  grid-gap: 3vw;
   grid-auto-columns: max-content;
-  ${mediaQuery.netbook} {
+  ${mediaQuery.phablet} {
     position: fixed;
     right: 100%;
     z-index: 2;
@@ -36,7 +31,7 @@ export const Container = styled.nav`
     transform: translate(${props => (props.showNav ? `99%` : `0`)});
     transition: ${props => props.theme.mediumTrans};
   }
-  ${mediaQuery.minNetbook} {
+  ${mediaQuery.minPhablet} {
     grid-auto-flow: column;
   }
 `
@@ -45,18 +40,23 @@ export const NavLink = styled(Link)`
   ${navLinkStyle};
 `
 
-export const Toggle = styled.div`
+const inNavToggle = css`
+  position: absolute;
+  top: 0.3em;
+  right: 0.5em;
+`
+
+const inHeaderToggle = css`
+  grid-area: 1 / 1 / 1 / 1;
+`
+
+export const Toggle = styled.span`
   font-size: 1.8em;
   cursor: pointer;
-  ${mediaQuery.minNetbook} {
+  width: max-content;
+  ${mediaQuery.minPhablet} {
     display: none;
   }
-  ${props =>
-    props.inside &&
-    `
-    position: absolute;
-    top: 0.3em;
-    right: 0.5em;
-  `};
+  ${props => (props.inside ? inNavToggle : inHeaderToggle)};
   ${navLinkStyle};
 `
