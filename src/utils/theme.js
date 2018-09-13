@@ -7,6 +7,8 @@ const theme = {
 
   mainOrange: `#ecb517`,
 
+  mainYellow: `#fffa00`,
+
   lightGray: `#dcdcdc`,
   mainGray: `#2b363f`,
   darkGray: `#1d242a`,
