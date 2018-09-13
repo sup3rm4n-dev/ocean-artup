@@ -7,6 +7,7 @@ const Participants = styled.section`
   display: grid;
   grid-gap: 2em;
   justify-content: center;
+  text-align: center;
   align-items: center;
   h2 {
     background: ${props => props.theme.lightGreen};

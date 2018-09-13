@@ -15,6 +15,7 @@ const justify = props => {
 }
 
 const arrow = css`
+  z-index: 2;
   background: ${props => props.theme.lightGreen};
   color: ${props => props.theme.mainWhite};
   border-radius: 50%;

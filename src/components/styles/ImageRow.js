@@ -6,7 +6,7 @@ const ImageRow = styled.div`
   ${mediaQuery.minTablet} {
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 1rem;
+    grid-gap: calc(0.5em + 1vw);
     grid-auto-columns: 1fr;
     width: 100%;
     p {
