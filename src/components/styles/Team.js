@@ -6,18 +6,14 @@ const Team = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
 
   p:first-child,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1 {
     grid-column: 1/-1;
     text-align: center;
   }
   .gatsby-resp-image-wrapper {
     border-radius: 50%;
     overflow: hidden;
+    max-width: 10em !important;
   }
 
   p {
