@@ -37,9 +37,6 @@ export const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.mainOrange} !important;
     }
   }
-  .gatsby-image-outer-wrapper {
-    display: contents;
-  }
 `
 
 export const Root = styled.main`
