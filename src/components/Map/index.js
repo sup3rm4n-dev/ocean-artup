@@ -15,7 +15,7 @@ export default class Map extends Component {
     if (!window.google) {
       const script = document.createElement('script')
       script.type = 'text/javascript'
-      script.src = `https://maps.google.com/maps/api/js?key=AIzaSyBWuEGRlDKPujuqB_VuyUUABGXRLbfItew`
+      script.src = `https://maps.google.com/maps/api/js?v=3.exp&key=AIzaSyCTwqPdip2BbUvii_w15wg31TOfyKAUoSw`
       const headScript = document.getElementsByTagName('script')[0]
       headScript.parentNode.insertBefore(script, headScript)
       script.addEventListener('load', () => {
