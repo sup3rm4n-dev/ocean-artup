@@ -13,20 +13,22 @@ import ImageRow from './styles/ImageRow'
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    'about': About,
-    'spotlight': Spotlight,
-    'participants': Participants,
-    'team': Team,
-    'imagerow': ImageRow,
+    about: About,
+    spotlight: Spotlight,
+    participants: Participants,
+    team: Team,
+    imagerow: ImageRow,
   },
 }).Compiler
 
 const PageBody = ({ htmlAst, isLanding, children }) => {
   const Comp = isLanding ? Landing : Page
-  return <Comp>
-    {htmlAst && renderAst(htmlAst)}
-    {children}
-  </Comp>
+  return (
+    <Comp>
+      {htmlAst && renderAst(htmlAst)}
+      {children}
+    </Comp>
+  )
 }
 
 export default PageBody
