@@ -13,8 +13,6 @@ const inTitle = css`
   }
 `
 
-const inExcerpt = css``
-
 export const Meta = styled.div`
   display: grid;
   grid-auto-columns: max-content;
@@ -32,7 +30,7 @@ export const Meta = styled.div`
       border-left: ${props => props.theme.smallBorder} solid;
     }
   }
-  ${props => (props.inTitle ? inTitle : inExcerpt)};
+  ${props => props.inTitle && inTitle};
 `
 
 export const AuthorPhoto = styled.img`
