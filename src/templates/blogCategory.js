@@ -32,7 +32,7 @@ export const query = graphql`
   query($slug: String!) {
     posts: allContentfulBlogPost(
       sort: { fields: [date], order: DESC }
-      filter: { categories: { slug: { eq: $slug } } }
+      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
     ) {
       edges {
         node {
