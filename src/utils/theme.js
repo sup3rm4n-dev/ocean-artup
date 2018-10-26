@@ -9,6 +9,7 @@ const theme = {
 
   mainYellow: `#fffa00`,
 
+  veryLightGray: `#fafafa`,
   lightGray: `#dcdcdc`,
   mainGray: `#2b363f`,
   darkGray: `#1d242a`,
