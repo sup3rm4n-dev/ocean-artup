@@ -12,6 +12,7 @@ const Head = ({ site, pageTitle, path, description, children }) => {
     <Helmet>
       <title>{title}</title>
       <meta property="og:type" content="website" />
+      <html lang="en" />
       {pageTitle && <meta property="og:title" content={pageTitle} />}
       <meta property="og:url" content={pageUrl} />
       <meta property="og:description" content={desc} />
