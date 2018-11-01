@@ -19,21 +19,27 @@ const Spotlight = styled.section`
   }
   background: ${props => props.theme.darkGray};
   .text {
-    padding: 3vh 3vw;
+    padding: calc(1em + 3vh) calc(1em + 3vw);
     p {
       max-width: 25em;
       margin: auto;
     }
   }
+  h2 {
+    margin-top: 0;
+  }
   ${mediaQuery.minTablet} {
     display: flex;
     text-align: left;
+    height: 25em;
     .text {
+      display: grid;
       margin-left: 0;
       max-width: ${props => props.theme.maxWidth};
+      align-content: center;
     }
     img {
-      width: 45vw;
+      max-width: 55vw;
     }
     &:nth-child(2n + 1) {
       text-align: right;
