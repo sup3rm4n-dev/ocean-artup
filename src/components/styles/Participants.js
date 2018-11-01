@@ -5,13 +5,17 @@ import mediaQuery from '../../utils/mediaQuery'
 const Participants = styled.section`
   padding: 5vh 5vw;
   display: grid;
-  grid-gap: 2em;
-  justify-content: center;
-  text-align: center;
+  grid-gap: 1em 2em;
   align-items: center;
+  max-width: ${props => props.theme.maxWidth};
+  margin: auto;
   h2 {
     background: ${props => props.theme.lightGreen};
     border-radius: ${props => props.theme.mediumBorderRadius};
+    margin: 0;
+  }
+  p {
+    margin: 0;
   }
   p:first-child {
     grid-column: 1/-1;
@@ -23,15 +27,13 @@ const Participants = styled.section`
     width: 100%;
     max-height: 10em;
   }
-  ${mediaQuery.tablet} {
+  grid-template-columns: auto auto;
+  ${mediaQuery.phablet} {
     h2 {
       grid-column: 1/-1;
     }
   }
   ${mediaQuery.minPhablet} {
-    grid-template-columns: auto auto;
-  }
-  ${mediaQuery.minTablet} {
     grid-template-columns: repeat(3, minmax(10em, 15em));
     grid-template-rows: repeat(4, auto);
     grid-auto-flow: column;
