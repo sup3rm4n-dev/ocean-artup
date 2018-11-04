@@ -13,17 +13,16 @@ const inTitle = css`
 `
 
 export const Meta = styled.div`
-  display: grid;
-  grid-auto-columns: max-content;
-  grid-gap: calc(0.5em + 1vw);
+  display: flex;
+  flex-wrap: wrap;
   margin: 1.3em 0;
   font-size: 0.9em;
   > span {
     display: flex;
     align-items: center;
+    margin-right: 1em;
   }
   ${mediaQuery.minPhone} {
-    grid-auto-flow: column;
     > :not(:first-child) {
       padding-left: 0.7em;
       border-left: ${props => props.theme.smallBorder} solid;
