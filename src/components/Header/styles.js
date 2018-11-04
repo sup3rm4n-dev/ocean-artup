@@ -14,10 +14,11 @@ export const Container = styled.header`
   grid-auto-flow: column;
   grid-gap: 3vw;
   align-items: center;
-  padding: 1vh 3vw;
-  justify-content: space-between;
+  padding: 1vh calc(0.75em + 1vw);
+  grid-template-areas: 'nav title search';
+  grid-template-columns: auto 1fr auto;
   ${mediaQuery.tablet} {
-    grid-template-columns: 1fr;
+    grid-template-areas: 'title nav search';
   }
 `
 
@@ -25,9 +26,5 @@ export const SiteTitle = styled(Link)`
   width: 5em;
   display: inline-grid;
   ${navLinkStyle};
-  grid-column: 1 / -1;
-  ${mediaQuery.phablet} {
-    grid-area: 1 / 1 / 1 / 1;
-    justify-self: center;
-  }
+  justify-self: center;
 `
