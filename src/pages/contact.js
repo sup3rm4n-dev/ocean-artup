@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import Map from '../components/Map'
@@ -29,14 +29,14 @@ const Contact = ({ data: { page }, location }) => {
   const { title, subtitle, body } = page
   const { excerpt, htmlAst } = body && body.data
   return (
-    <Layout pageTitle={title} path={location.pathname} description={excerpt}>
+    <Global pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} subtitle={subtitle} />
       {htmlAst && (
         <PageBody htmlAst={htmlAst}>
           <Map id="contactMap" {...mapProps} />
         </PageBody>
       )}
-    </Layout>
+    </Global>
   )
 }
 

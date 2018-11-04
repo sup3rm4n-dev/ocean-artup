@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import CategoryList from '../components/CategoryList'
@@ -13,7 +13,7 @@ const CategoryTemplate = ({ data, location }) => {
   const { text } = activeCategory.description
   const path = location.pathname
   return (
-    <Layout pageTitle={title} path={path} description={text}>
+    <Global pageTitle={title} path={path} description={text}>
       <PageTitle title={title} />
       <CategoryList categories={categories.edges} />
       <PageBody>
@@ -22,7 +22,7 @@ const CategoryTemplate = ({ data, location }) => {
             <PostExcerpt key={node.slug} post={node} />
           ))}
       </PageBody>
-    </Layout>
+    </Global>
   )
 }
 

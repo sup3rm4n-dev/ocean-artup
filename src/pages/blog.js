@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import CategoryList from '../components/CategoryList'
@@ -11,7 +11,7 @@ const Blog = ({ data, location }) => {
   const title = `Blog`
   const { posts, categories } = data
   return (
-    <Layout pageTitle={title} path={location.pathname}>
+    <Global pageTitle={title} path={location.pathname}>
       <PageTitle title={title} />
       <CategoryList categories={categories.edges} />
       <PageBody>
@@ -20,7 +20,7 @@ const Blog = ({ data, location }) => {
             <PostExcerpt key={node.slug} post={node} />
           ))}
       </PageBody>
-    </Layout>
+    </Global>
   )
 }
 
