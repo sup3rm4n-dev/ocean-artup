@@ -11,7 +11,8 @@ const Page = styled.article`
   img {
     width: 100%;
   }
-  .caption {
+  img + em,
+  .gatsby-resp-image-wrapper + em {
     display: block;
     font-size: 0.9em;
     text-align: center;

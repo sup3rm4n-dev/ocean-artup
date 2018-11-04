@@ -23,7 +23,6 @@ module.exports = {
             options: {
               maxWidth: 2000,
               linkImagesToOriginal: false,
-              wrapperStyle: `max-width: none !important;`,
             },
           },
           `gatsby-remark-smartypants`,
