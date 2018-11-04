@@ -53,15 +53,10 @@ const queries = [
   {
     query: pageQuery,
     transformer: ({ data }) =>
-      data.pages.edges.map(
-        ({ node: { body, ...rest } }) =>
-          [`Error 404`].includes(rest.title)
-            ? {}
-            : {
-                ...body.data,
-                ...rest,
-              }
-      ),
+      data.pages.edges.map(({ node: { body, ...rest } }) => ({
+        ...body.data,
+        ...rest,
+      })),
     indexName: `Pages`,
     settings: { attributesToSnippet: [`excerpt:20`] },
   },
