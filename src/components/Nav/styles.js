@@ -18,6 +18,7 @@ export const Container = styled.nav`
   display: grid;
   grid-gap: 3vw;
   grid-auto-columns: max-content;
+  overflow-x: scroll;
   ${mediaQuery.phablet} {
     position: fixed;
     right: 100%;
