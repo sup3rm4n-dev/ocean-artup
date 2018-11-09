@@ -35,12 +35,12 @@ export const query = graphql`
       title
       slug
     }
-    date(formatString: "MMMM DD, YYYY")
+    date(formatString: "MMM D, YYYY")
     body {
       data: childMarkdownRemark {
         htmlAst
         timeToRead
-        excerpt(pruneLength: 250)
+        excerpt
       }
     }
     featuredImage {
