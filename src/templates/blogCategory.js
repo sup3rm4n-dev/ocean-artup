@@ -3,25 +3,28 @@ import { graphql } from 'gatsby'
 
 import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
+import PostList from '../components/PostList'
 import CategoryList from '../components/CategoryList'
-import PostExcerpt from '../components/PostExcerpt'
 
 const CategoryTemplate = ({ data, location }) => {
-  const { activeCategory, posts, categories } = data
+  const { activeCategory, categories } = data
+  let { posts } = data
+  console.log(activeCategory)
   const title = `Blog`
   const { text } = activeCategory.description
   const path = location.pathname
+  if (activeCategory.slug !== `/`) {
+    posts.edges = posts.edges.filter(({ node }) =>
+      node.categories
+        .map(category => category.slug)
+        .includes(activeCategory.slug)
+    )
+  }
   return (
     <Global pageTitle={title} path={path} description={text}>
       <PageTitle title={title} />
       <CategoryList categories={categories.edges} />
-      <PageBody>
-        {posts &&
-          posts.edges.map(({ node }) => (
-            <PostExcerpt key={node.slug} post={node} />
-          ))}
-      </PageBody>
+      {posts && <PostList posts={posts.edges} />}
     </Global>
   )
 }
@@ -29,11 +32,26 @@ const CategoryTemplate = ({ data, location }) => {
 export default CategoryTemplate
 
 export const query = graphql`
-  query($slug: String!) {
-    posts: allContentfulBlogPost(
-      sort: { fields: [date], order: DESC }
-      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
+  fragment categories on Query {
+    categories: allContentfulBlogCategory(
+      sort: { fields: [title], order: ASC }
     ) {
+      edges {
+        node {
+          title
+          slug
+          icon {
+            title
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  query($slug: String!) {
+    posts: allContentfulBlogPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           ...postFields
