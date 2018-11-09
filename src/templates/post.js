@@ -43,6 +43,12 @@ export const query = graphql`
         excerpt(pruneLength: 250)
       }
     }
+    featuredImage {
+      title
+      fluid(quality: 100, maxWidth: 2400) {
+        ...GatsbyContentfulFluid_withWebp
+      }
+    }
   }
   query($slug: String!) {
     post: contentfulBlogPost(slug: { eq: $slug }) {

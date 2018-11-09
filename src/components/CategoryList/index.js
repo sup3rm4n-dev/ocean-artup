@@ -7,6 +7,7 @@ const Category = ({ title, slug, icon }) => (
   <CategoryLink exact activeClassName="active" to={`/blog/` + slug}>
     {icon && <CategoryIcon src={icon.file.url} alt={icon.title} />}
     {title}
+    {title !== `All` && `s`}
   </CategoryLink>
 )
 
