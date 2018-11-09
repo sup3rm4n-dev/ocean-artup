@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
       throw new Error(response.errors)
     }
     response.data.content.edges.forEach(({ node }) => {
-      if (![`/`, `contact`].includes(node.slug)) {
+      if (![`contact`].includes(node.slug)) {
         createPage({
           path: pathPrefix + node.slug,
           component,
