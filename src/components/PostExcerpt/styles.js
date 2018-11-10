@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 export const Article = styled.article`
   background: ${props => props.theme.veryLightGray};
@@ -15,9 +14,8 @@ export const Article = styled.article`
   }
 `
 
-export const Title = styled(Link)`
-  font-size: 1.3em;
-  font-weight: bold;
+export const Title = styled.h3`
+  margin: 0;
 `
 
 export const Excerpt = styled.p`

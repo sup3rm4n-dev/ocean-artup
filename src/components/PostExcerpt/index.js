@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Article, Title, Excerpt } from './styles'
@@ -9,9 +10,15 @@ const PostExcerpt = ({
   post: { title, slug, body, featuredImage: featImg },
 }) => (
   <Article>
-    {featImg && <Img fluid={featImg.fluid} alt={featImg.title} />}
+    {featImg && (
+      <Link to={'/blog/' + slug}>
+        <Img fluid={featImg.fluid} alt={featImg.title} />
+      </Link>
+    )}
     <div>
-      <Title to={'/blog/' + slug}>{title}</Title>
+      <Link to={'/blog/' + slug}>
+        <Title>{title}</Title>
+      </Link>
       <PostMeta {...post} />
       <Excerpt dangerouslySetInnerHTML={{ __html: body.data.excerpt }} />
     </div>
