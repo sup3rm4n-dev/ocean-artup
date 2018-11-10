@@ -29,7 +29,7 @@ const Img = styled(Image)`
 
 const PageNotFound = ({ data, location }) => {
   return (
-    <Global pageTitle="Error 404" path={location.pathname} bg={false}>
+    <Global pageTitle="Error 404" path={location.pathname} showHero={false}>
       <Img fluid={data.background.fluid} />
       <CenterBox>
         <h2>Page not found</h2>

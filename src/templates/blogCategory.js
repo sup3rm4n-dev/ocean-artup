@@ -9,7 +9,6 @@ import CategoryList from '../components/CategoryList'
 const CategoryTemplate = ({ data, location }) => {
   const { activeCategory, categories } = data
   let { posts } = data
-  console.log(activeCategory)
   const title = `Blog`
   const { text } = activeCategory.description
   const path = location.pathname
