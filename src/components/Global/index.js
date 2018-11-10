@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 
 import Helmet from '../Helmet'
-import Background from '../Background'
+import Hero from '../Hero'
 import Header from '../Header'
 import Footer from '../Footer'
 import theme from '../../utils/theme'
@@ -12,12 +12,12 @@ import Scroll from '../Scroll'
 
 import { Root, GlobalStyle } from './styles'
 
-const Global = ({ children, site, path, bg = true, ...rest }) => (
+const Global = ({ children, site, path, showHero = true, hero, ...rest }) => (
   <ThemeProvider theme={theme}>
     <Root>
       <Helmet site={site.meta} path={path} {...rest} />
       <GlobalStyle />
-      {bg && <Background path={path} />}
+      {showHero && <Hero hero={hero} path={path} />}
       <Header site={site.meta} />
       {children}
       <Footer />
@@ -27,6 +27,10 @@ const Global = ({ children, site, path, bg = true, ...rest }) => (
 )
 
 Global.propTypes = {
+  site: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  showHero: PropTypes.bool.isRequired,
+  hero: PropTypes.object,
   children: PropTypes.node.isRequired,
 }
 
