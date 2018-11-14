@@ -6,10 +6,9 @@ import PageTitle from '../components/PageTitle'
 import PostList from '../components/PostList'
 import CategoryList from '../components/CategoryList'
 
-const CategoryTemplate = ({ data, location }) => {
+const CategoryTemplate = ({ data, location, title = `Blog` }) => {
   const { activeCategory, categories } = data
   let { posts } = data
-  const title = `Blog`
   const { text } = activeCategory.description
   const path = location.pathname
   if (activeCategory.slug !== `/`) {
