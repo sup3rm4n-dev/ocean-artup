@@ -29,7 +29,7 @@ const Global = ({ children, site, path, showHero = true, hero, ...rest }) => (
 Global.propTypes = {
   site: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  showHero: PropTypes.bool.isRequired,
+  showHero: PropTypes.bool,
   hero: PropTypes.object,
   children: PropTypes.node.isRequired,
 }
