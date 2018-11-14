@@ -1,13 +1,16 @@
 import React from 'react'
 
-import { Container } from './styles'
+import Masonry from '../Masonry'
 import PostExcerpt from '../PostExcerpt'
+import { Container } from './styles'
 
-const PostList = ({ posts, categories }) => (
+const PostList = ({ posts }) => (
   <Container>
-    {posts.map(({ node }) => (
-      <PostExcerpt key={node.slug} post={node} />
-    ))}
+    <Masonry>
+      {posts.map(({ node }) => (
+        <PostExcerpt key={node.slug} post={node} />
+      ))}
+    </Masonry>
   </Container>
 )
 
