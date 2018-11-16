@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
 export const Article = styled.article`
+  height: 100%;
+  display: grid;
   background: ${props => props.theme.veryLightGray};
   border-radius: ${props => props.theme.mediumBorderRadius};
+  border: 1px solid ${props => props.theme.lightGray};
   overflow: hidden;
   .gatsby-image-wrapper {
     height: 25vh;
