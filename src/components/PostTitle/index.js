@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Container } from './styles'
+import { PostHeader } from './styles'
 import PostMeta from '../PostMeta'
 
 const PostTitle = ({ post }) => (
-  <Container>
+  <PostHeader>
     <h1>{post.title}</h1>
     <PostMeta inTitle {...post} />
-  </Container>
+  </PostHeader>
 )
 
 export default PostTitle

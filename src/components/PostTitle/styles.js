@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.header`
+export const PostHeader = styled.header`
   z-index: 2;
   grid-column: 2 / -2;
   grid-row: 1 / 3;
@@ -11,7 +11,7 @@ export const Container = styled.header`
   text-align: center;
   h1 {
     padding: 0.2em 0.5em;
-    margin: 0;
+    margin: 0 0 calc(0.5em + 8vmin);
     background: rgba(0, 0, 0, 0.5);
     border-radius: ${props => props.theme.mediumBorderRadius};
   }
