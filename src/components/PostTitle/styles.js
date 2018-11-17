@@ -8,4 +8,11 @@ export const Container = styled.header`
   display: grid;
   align-content: center;
   justify-items: center;
+  text-align: center;
+  h1 {
+    padding: 0.2em 0.5em;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: ${props => props.theme.mediumBorderRadius};
+  }
 `
