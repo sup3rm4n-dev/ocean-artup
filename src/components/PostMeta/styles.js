@@ -1,17 +1,24 @@
 import styled, { css } from 'styled-components'
 
+import mediaQuery from '../../utils/mediaQuery'
+
 const inTitle = css`
   justify-items: center;
   padding: 0.2em 1em;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: ${props => props.theme.mediumBorderRadius};
   margin-top: 2em;
   > :not(:first-child) {
-    padding-left: 0.7em;
-    border-left: ${props => props.theme.smallBorder} solid;
+    ${mediaQuery.minPhone} {
+      padding-left: 0.7em;
+      border-left: ${props => props.theme.smallBorder} solid;
+    }
   }
   a {
     color: ${props => props.theme.lightBlue};
+  }
+  ${mediaQuery.phone} {
+    display: grid;
   }
 `
 
@@ -22,7 +29,9 @@ export const Meta = styled.div`
   > span {
     display: flex;
     align-items: center;
-    margin-right: 1em;
+    :not(:last-child) {
+      margin-right: 1em;
+    }
   }
   ${props => props.inTitle && inTitle};
 `
