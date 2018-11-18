@@ -9,7 +9,7 @@ export const Container = styled.header`
   grid-row: 1;
   z-index: 3;
   align-self: start;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: grid;
   grid-auto-flow: column;
   grid-gap: 3vw;

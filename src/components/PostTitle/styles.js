@@ -11,7 +11,7 @@ export const PostHeader = styled.header`
   text-align: center;
   h1 {
     padding: 0.2em 0.5em;
-    margin: 0 0 calc(0.5em + 8vmin);
+    margin: 4vmin 4vmin 8vmin;
     background: rgba(0, 0, 0, 0.5);
     border-radius: ${props => props.theme.mediumBorderRadius};
   }
