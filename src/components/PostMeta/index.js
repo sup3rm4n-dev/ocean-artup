@@ -31,10 +31,10 @@ const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
     {!inTitle && (
       <div>
         <span>Categories: </span>
-        {categories.map((category, index) => (
-          <Fragment key={category.slug}>
+        {categories.map(({ title, slug }, index) => (
+          <Fragment key={slug}>
             {!!index && ', '}
-            <Link to={`blog/` + category.slug}>{category.title}</Link>
+            <Link to={`blog/` + slug}>{title}</Link>
           </Fragment>
         ))}
       </div>
