@@ -31,8 +31,12 @@ const Contact = ({ data: { page }, location }) => {
   return (
     <Global pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} subtitle={subtitle} />
-      {html && <PageBody dangerouslySetInnerHTML={{ __html: html }} />}
-      <Map id="contactMap" {...mapProps} />
+      {html && (
+        <PageBody>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <Map id="contactMap" {...mapProps} />
+        </PageBody>
+      )}
     </Global>
   )
 }
