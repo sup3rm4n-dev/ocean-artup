@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import imagerow from './imagerow'
+import imageRow from './imageRow'
 import team from './team'
 import mediaQuery from '../../utils/mediaQuery'
 
@@ -21,7 +21,7 @@ const PageBody = styled.article`
     font-style: italic;
     margin-bottom: 1em;
   }
-  ${imagerow};
+  ${imageRow};
   ${team};
 `
 
