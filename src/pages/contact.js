@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
+import PageBody from '../components/styles/PageBody'
 import Map from '../components/Map'
 
 const mapProps = {
@@ -27,15 +27,12 @@ const mapProps = {
 
 const Contact = ({ data: { page }, location }) => {
   const { title, subtitle, body } = page
-  const { excerpt, htmlAst } = body && body.data
+  const { excerpt, html } = body && body.data
   return (
     <Global pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} subtitle={subtitle} />
-      {htmlAst && (
-        <PageBody htmlAst={htmlAst}>
-          <Map id="contactMap" {...mapProps} />
-        </PageBody>
-      )}
+      {html && <PageBody dangerouslySetInnerHTML={{ __html: html }} />}
+      <Map id="contactMap" {...mapProps} />
     </Global>
   )
 }
@@ -50,7 +47,7 @@ export const query = graphql`
       body {
         data: childMarkdownRemark {
           excerpt
-          htmlAst
+          html
         }
       }
     }

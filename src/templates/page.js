@@ -3,15 +3,15 @@ import { graphql } from 'gatsby'
 
 import Global from '../components/Global'
 import PageTitle from '../components/PageTitle'
-import PageBody from '../components/PageBody'
+import PageBody from '../components/styles/PageBody'
 
 const PageTemplate = ({ data: { page }, location }) => {
   const { title, body } = page
-  const { excerpt, htmlAst } = body && body.data
+  const { excerpt, html } = body && body.data
   return (
     <Global pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} />
-      {htmlAst && <PageBody htmlAst={htmlAst} />}
+      {html && <PageBody dangerouslySetInnerHTML={{ __html: html }} />}
     </Global>
   )
 }
@@ -26,7 +26,7 @@ export const query = graphql`
       body {
         data: childMarkdownRemark {
           excerpt
-          htmlAst
+          html
         }
       }
     }

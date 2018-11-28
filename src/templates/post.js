@@ -3,11 +3,11 @@ import { graphql } from 'gatsby'
 
 import Global from '../components/Global'
 import PostTitle from '../components/PostTitle'
-import PageBody from '../components/PageBody'
+import PageBody from '../components/styles/PageBody'
 
 const PostTemplate = ({ data: { post }, location }) => {
   const { title, body, featuredImage } = post
-  const { htmlAst, excerpt } = body.data
+  const { html, excerpt } = body.data
   return (
     <Global
       pageTitle={title}
@@ -16,7 +16,7 @@ const PostTemplate = ({ data: { post }, location }) => {
       hero={featuredImage}
     >
       <PostTitle post={post} />
-      <PageBody htmlAst={htmlAst} />
+      <PageBody dangerouslySetInnerHTML={{ __html: html }} />
     </Global>
   )
 }
@@ -43,7 +43,7 @@ export const query = graphql`
     date(formatString: "MMM D, YYYY")
     body {
       data: childMarkdownRemark {
-        htmlAst
+        html
         timeToRead
         excerpt
       }
