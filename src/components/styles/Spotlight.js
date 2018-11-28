@@ -1,55 +1,57 @@
-import styled from 'styled-components'
+import { css } from 'styled-components'
 
 import mediaQuery from '../../utils/mediaQuery'
 
-const Spotlight = styled.section`
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  a {
-    color: ${props => props.theme.mainOrange};
-    :hover {
-      color: ${props => props.theme.mainYellow} !important;
-    }
-  }
-  > p {
-    margin: 0;
-  }
-  background: ${props => props.theme.darkGray};
-  .text {
-    padding: calc(1em + 3vh) calc(1em + 3vw);
-    p {
-      max-width: 25em;
-      margin: auto;
-    }
-  }
-  h2 {
-    margin-top: 0;
-  }
-  ${mediaQuery.minTablet} {
-    display: flex;
-    text-align: left;
-    height: 25em;
-    .text {
-      display: grid;
-      margin-left: 0;
-      max-width: ${props => props.theme.maxWidth};
-      align-content: center;
-    }
+const spotlight = css`
+  section.spotlight {
     img {
-      max-width: 55vw;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    &:nth-child(2n + 1) {
-      text-align: right;
-      flex-direction: row-reverse;
-      background: ${props => props.theme.mainGray};
+    a {
+      color: ${props => props.theme.mainOrange};
+      :hover {
+        color: ${props => props.theme.mainYellow} !important;
+      }
+    }
+    > p {
+      margin: 0;
+    }
+    background: ${props => props.theme.darkGray};
+    .text {
+      padding: calc(1em + 3vh) calc(1em + 3vw);
+      p {
+        max-width: 25em;
+        margin: auto;
+      }
+    }
+    h2 {
+      margin-top: 0;
+    }
+    ${mediaQuery.minTablet} {
+      display: flex;
+      text-align: left;
+      height: 25em;
       .text {
-        margin-right: 0;
+        display: grid;
+        margin-left: 0;
+        max-width: ${props => props.theme.maxWidth};
+        align-content: center;
+      }
+      img {
+        max-width: 55vw;
+      }
+      &:nth-child(2n + 1) {
+        text-align: right;
+        flex-direction: row-reverse;
+        background: ${props => props.theme.mainGray};
+        .text {
+          margin-right: 0;
+        }
       }
     }
   }
 `
 
-export default Spotlight
+export default spotlight
