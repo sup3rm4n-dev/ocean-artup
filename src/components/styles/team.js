@@ -5,7 +5,6 @@ const team = css`
     display: grid;
     grid-gap: calc(0.5em + 4vmin);
     grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
-
     p:first-child,
     h1 {
       grid-column: 1/-1;
