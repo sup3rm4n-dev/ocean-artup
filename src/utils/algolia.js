@@ -26,7 +26,7 @@ const postQuery = `{
         objectID: id
         slug
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM DD, YYYY")
         author {
           name
           email
