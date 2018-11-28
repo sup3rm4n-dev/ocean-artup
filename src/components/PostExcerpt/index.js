@@ -12,13 +12,13 @@ const PostExcerpt = ({ post, post: { title, slug, body, featuredImage } }) => (
         <Img fluid={featuredImage.fluid} alt={featuredImage.title} />
       </Link>
     )}
-    <div>
+    <main>
       <Link to={'/blog/' + slug}>
         <Title>{title}</Title>
       </Link>
       <PostMeta {...post} />
       <Excerpt dangerouslySetInnerHTML={{ __html: body.data.excerpt }} />
-    </div>
+    </main>
   </Post>
 )
 
