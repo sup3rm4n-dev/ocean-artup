@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
+import imagerow from './imagerow'
+import team from './team'
 import mediaQuery from '../../utils/mediaQuery'
 
-const Page = styled.article`
+const PageBody = styled.article`
   grid-column: 3;
   margin: 9vh 0;
   ${mediaQuery.minPhablet} {
@@ -19,6 +21,8 @@ const Page = styled.article`
     font-style: italic;
     margin-bottom: 1em;
   }
+  ${imagerow};
+  ${team};
 `
 
-export default Page
+export default PageBody
