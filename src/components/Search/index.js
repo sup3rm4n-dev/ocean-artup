@@ -72,7 +72,7 @@ export default class Search extends Component {
           {indices.map(({ name, title, hitComp }) => (
             <Index key={name} indexName={name}>
               <header>
-                {title && <h2>{title}</h2>}
+                <h2>{title}</h2>
                 <Stats />
               </header>
               <Results>
