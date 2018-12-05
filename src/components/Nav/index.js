@@ -6,7 +6,7 @@ import Nav from './comp'
 
 const query = graphql`
   {
-    nav: contentfulJson(title: { eq: "NewNav" }) {
+    nav: contentfulJson(title: { eq: "Nav" }) {
       data {
         nav {
           url
