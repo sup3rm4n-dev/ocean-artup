@@ -6,6 +6,7 @@ const participants = css`
   section.participants {
     padding: 5vh 5vw;
     display: grid;
+    grid-auto-rows: 1fr max-content;
     grid-gap: 1em 2em;
     align-items: center;
     max-width: ${props => props.theme.maxWidth};
