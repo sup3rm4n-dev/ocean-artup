@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { navLinkStyle } from '../Nav/styles'
 import mediaQuery from '../../utils/mediaQuery'
 
-export const Container = styled.header`
+export const HeaderContainer = styled.header`
   grid-column: 1 / -1;
   grid-row: 1;
   z-index: 3;
