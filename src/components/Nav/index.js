@@ -11,10 +11,6 @@ const query = graphql`
         nav {
           url
           title
-          subNav {
-            url
-            title
-          }
         }
       }
     }
