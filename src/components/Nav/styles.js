@@ -69,11 +69,6 @@ export const SubNav = styled.div`
   }
 `
 
-const span = css`
-  grid-column: 1/-1;
-  border-top: 1px solid ${props => props.theme.mainWhite};
-`
-
 export const NavLink = styled(Link)`
   ${navLinkStyle};
   ${SubNav} & {
@@ -81,7 +76,6 @@ export const NavLink = styled(Link)`
     :hover {
       color: ${props => props.theme.darkBlue};
     }
-    ${props => props.span && span};
   }
 `
 
