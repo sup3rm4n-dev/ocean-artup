@@ -19,7 +19,7 @@ const Results = connectStateResults(
 
 const Stats = connectStateResults(
   ({ searchResults: res }) =>
-    res && `${res.nbHits} result${res.nbHits !== 1 ? `s` : ``}`
+    res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`
 )
 
 export default class Search extends Component {
@@ -72,7 +72,7 @@ export default class Search extends Component {
           {indices.map(({ name, title, hitComp }) => (
             <Index key={name} indexName={name}>
               <header>
-                <h2>{title}</h2>
+                <h3>{title}</h3>
                 <Stats />
               </header>
               <Results>

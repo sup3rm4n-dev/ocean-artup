@@ -113,17 +113,17 @@ export const HitsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.3em;
-    h2 {
+    h3 {
       color: ${props => props.theme.mainWhite};
       background: ${props => props.theme.lightGreen};
       padding: 0.1em 0.4em;
       border-radius: ${props => props.theme.smallBorderRadius};
     }
   }
-  h2 {
+  h3 {
     margin: 0 0 0.5em;
   }
-  h3 {
+  h4 {
     margin-bottom: 0.3em;
   }
 `
