@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, Fragment, React } from 'react'
 import { DownArrow } from 'styled-icons/boxicons-regular/DownArrow'
 
 import { NavContainer, NavEntry, SubNav, NavLink, Toggle } from './styles'
@@ -11,23 +10,9 @@ const events = [
 ]
 
 export default class Nav extends Component {
-  static propTypes = {
-    nav: PropTypes.arrayOf(
-      PropTypes.shape({
-        node: PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          slug: PropTypes.string.isRequired,
-          subNav: PropTypes.arrayOf({
-            title: PropTypes.string.isRequired,
-            slug: PropTypes.string.isRequired,
-          }),
-        }),
-      })
-    ),
-  }
   state = {
     showNav: false,
-    ref: React.createRef(),
+    ref: createRef(),
     showSubNav: false,
   }
 
@@ -81,7 +66,7 @@ export default class Nav extends Component {
                 to={url}
                 as={subNav && showNav && showSubNav !== index && `span`}
                 title={title}
-                onClick={this.toggleSubNav(index)}
+                onClick={showNav ? this.toggleSubNav(index) : null}
               >
                 {title} {subNav && <DownArrow size="0.5em" />}
               </NavLink>
