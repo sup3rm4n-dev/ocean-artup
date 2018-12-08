@@ -16,7 +16,7 @@ const inTitle = css`
   a {
     color: ${props => props.theme.lightBlue};
   }
-  ${mediaQuery.phone} {
+  ${mediaQuery.maxPhone} {
     display: grid;
   }
 `

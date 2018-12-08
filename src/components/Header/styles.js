@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header`
   padding: 1vh calc(0.75em + 1vw);
   grid-template-areas: 'nav title search';
   grid-template-columns: auto 1fr auto;
-  ${mediaQuery.tablet} {
+  ${mediaQuery.maxTablet} {
     grid-template-areas: 'title nav search';
   }
 `

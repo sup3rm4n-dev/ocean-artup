@@ -30,7 +30,7 @@ const participants = css`
       max-height: 10em;
     }
     grid-template-columns: auto auto;
-    ${mediaQuery.phablet} {
+    ${mediaQuery.maxPhablet} {
       h2 {
         grid-column: 1/-1;
       }
