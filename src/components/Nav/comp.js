@@ -1,4 +1,4 @@
-import React, { Component, Fragment, React } from 'react'
+import React, { Component, Fragment, createRef } from 'react'
 import { DownArrow } from 'styled-icons/boxicons-regular/DownArrow'
 
 import { NavContainer, NavEntry, SubNav, NavLink, Toggle } from './styles'
