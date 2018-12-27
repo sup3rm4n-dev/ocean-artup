@@ -4,9 +4,9 @@ import mediaQuery from '../../utils/mediaQuery'
 
 const participants = css`
   section.participants {
-    padding: 5vh 5vw;
+    padding: 15vh 10vw 10vh;
     display: grid;
-    grid-auto-rows: 1fr max-content;
+    grid-template-rows: auto auto 1fr auto 1fr auto 1fr;
     grid-gap: 1em 2em;
     align-items: center;
     max-width: ${props => props.theme.maxWidth};
