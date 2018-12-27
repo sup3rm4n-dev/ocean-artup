@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import mediaQuery from '../../utils/mediaQuery'
-
-export const Container = styled.div`
+export const CategoryContainer = styled.div`
   grid-column: 2 / -2;
   text-align: center;
   margin-top: 1em;
@@ -28,12 +26,10 @@ export const CategoryLink = styled(Link)`
 `
 
 export const List = styled.div`
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  ${mediaQuery.minPhablet} {
-    grid-auto-flow: column;
-    grid-template-columns: initial;
+  > * {
+    margin: 0 1em 1em 0;
   }
 `
