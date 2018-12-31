@@ -32,9 +32,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${props => props.theme.mainBlue};
+    color: ${props => props.theme.blue};
     :hover {
-      color: ${props => props.theme.mainOrange} !important;
+      color: ${props => props.theme.orange} !important;
     }
   }
 `

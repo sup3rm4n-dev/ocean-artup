@@ -10,9 +10,9 @@ const spotlight = css`
       object-fit: cover;
     }
     a {
-      color: ${props => props.theme.mainOrange};
+      color: ${props => props.theme.orange};
       :hover {
-        color: ${props => props.theme.mainYellow} !important;
+        color: ${props => props.theme.yellow} !important;
       }
     }
     > p {
@@ -45,7 +45,7 @@ const spotlight = css`
       &:nth-child(2n + 1) {
         text-align: right;
         flex-direction: row-reverse;
-        background: ${props => props.theme.mainGray};
+        background: ${props => props.theme.gray};
         .text {
           margin-right: 0;
         }

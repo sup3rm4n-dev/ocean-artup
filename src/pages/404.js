@@ -8,7 +8,7 @@ import Global from '../components/Global'
 const CenterBox = styled.div`
   grid-area: 3/3/-3/-3;
   z-index: 2;
-  color: ${props => props.theme.mainWhite};
+  color: ${props => props.theme.white};
   text-align: center;
   align-self: center;
   justify-self: center;
@@ -17,7 +17,7 @@ const CenterBox = styled.div`
   width: max-content;
   padding: 0 3em;
   a {
-    color: ${props => props.theme.mainYellow};
+    color: ${props => props.theme.yellow};
   }
 `
 

@@ -7,7 +7,7 @@ import participants from './participants'
 const LandingBody = styled.article`
   grid-column: 1 / -1;
   text-align: center;
-  color: ${props => props.theme.mainWhite};
+  color: ${props => props.theme.white};
   ${about};
   ${spotlight};
   ${participants};

@@ -5,7 +5,7 @@ export const Container = styled.header`
   grid-column: 2 / -2;
   grid-row: 2;
   text-align: center;
-  color: ${props => props.theme.mainWhite};
+  color: ${props => props.theme.white};
   font-size: calc(1em + 1vw);
   h2 {
     margin-top: 2.5em;

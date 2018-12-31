@@ -21,7 +21,7 @@ export const CategoryLink = styled(Link)`
   display: flex;
   align-items: center;
   &.${props => props.activeClassName} {
-    color: ${props => props.theme.mainOrange};
+    color: ${props => props.theme.orange};
   }
 `
 

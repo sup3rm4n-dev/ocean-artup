@@ -4,13 +4,13 @@ import { Link } from 'gatsby'
 import mediaQuery from '../../utils/mediaQuery'
 
 export const navLinkStyle = css`
-  color: ${props => props.theme.mainWhite};
+  color: ${props => props.theme.white};
   transition: ${props => props.theme.shortTrans};
   :hover {
-    color: ${props => props.theme.mainOrange};
+    color: ${props => props.theme.orange};
   }
   &.${props => props.activeClassName} {
-    color: ${props => props.theme.mainOrange};
+    color: ${props => props.theme.orange};
   }
 `
 
@@ -52,7 +52,7 @@ export const SubNav = styled.div`
   width: max-content;
   border-radius: ${props => props.theme.smallBorderRadius};
   grid-gap: 0.5em;
-  background: ${props => props.theme.mainGray};
+  background: ${props => props.theme.gray};
   opacity: 0;
   position: absolute;
   transition: opacity 0.25s;
@@ -72,7 +72,7 @@ export const SubNav = styled.div`
 export const NavLink = styled(Link)`
   ${navLinkStyle};
   ${SubNav} & {
-    color: ${props => props.theme.mainWhite};
+    color: ${props => props.theme.white};
     :hover {
       color: ${props => props.theme.darkBlue};
     }

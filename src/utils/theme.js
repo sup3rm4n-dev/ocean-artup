@@ -1,21 +1,21 @@
 const theme = {
-  mainBlue: `#2A4FA8`,
+  blue: `#2A4FA8`,
   darkBlue: `#002e9d`,
   lightBlue: `#97C9F4`,
 
   lightGreen: `#0fc5b6`,
 
-  mainOrange: `#ecb517`,
+  orange: `#ecb517`,
 
-  mainYellow: `#fffa00`,
+  yellow: `#fffa00`,
 
   veryLightGray: `#fafafa`,
   lightGray: `#dcdcdc`,
-  mainGray: `#2b363f`,
+  gray: `#2b363f`,
   darkGray: `#1d242a`,
 
-  mainWhite: `white`,
-  mainBlack: `black`,
+  white: `white`,
+  black: `black`,
 
   maxWidth: `40em`,
 
