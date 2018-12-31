@@ -13,9 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: 'dbpftxjar4kc',
-        accessToken:
-          'c84ebd1a474873d15559f1ee04871d21d3c34c1dfe16c4398e71c1195cec1920',
+        spaceId: process.env.contentfulSpaceId,
+        accessToken: process.env.contentfulAccessToken,
       },
     },
     {
@@ -25,13 +24,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
-              maxWidth: 2000,
+              maxWidth: 2500,
               linkImagesToOriginal: false,
             },
           },
-          `gatsby-remark-smartypants`,
           `gatsby-remark-embed-video`,
           `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-smartypants`,
         ],
       },
     },
@@ -40,21 +39,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-122970164-2',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.algoliaAppId,
-        apiKey: process.env.algoliaApiKey,
-        queries,
-        chunkSize: 10000, // default: 1000
+        trackingId: process.env.GATrackingId,
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.algoliaAppId,
+        apiKey: process.env.algoliaAdminKey,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
   ],
 }
