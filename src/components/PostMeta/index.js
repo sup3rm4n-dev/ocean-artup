@@ -9,7 +9,7 @@ import { Timer } from 'styled-icons/material/Timer'
 import { Meta, AuthorPhoto } from './styles'
 
 const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
-  <Fragment>
+  <>
     <Meta inTitle={inTitle}>
       <span>
         <UserEdit size={iconSize} />
@@ -39,7 +39,7 @@ const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
         ))}
       </div>
     )}
-  </Fragment>
+  </>
 )
 
 export default PostMeta
