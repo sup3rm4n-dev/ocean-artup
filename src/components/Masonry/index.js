@@ -10,6 +10,8 @@ export default class Masonry extends Component {
 
   state = { spans: [], ref: createRef() }
 
+  reducer = (acc, node) => acc + node.scrollHeight
+
   computeSpans = () => {
     const { rowHeight } = this.props
     const spans = []
