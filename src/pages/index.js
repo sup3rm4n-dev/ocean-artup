@@ -12,7 +12,7 @@ const IndexPage = ({ data: { page }, location }) => {
   return (
     <Global pageTitle={title} path={location.pathname} description={excerpt}>
       <PageTitle title={title} subtitle={subtitle} />
-      <Scroll dir="down" to={1} justify="center" position="absolute" />
+      <Scroll direction="down" to={1} align="center" position="absolute" />
       {html && <LandingBody dangerouslySetInnerHTML={{ __html: html }} />}
     </Global>
   )
