@@ -6,7 +6,7 @@ import PageTitle from '../components/PageTitle'
 import Scroll from '../components/Scroll'
 import LandingBody from '../components/styles/LandingBody'
 
-const LandingPage = ({ data: { page }, location }) => {
+const IndexPage = ({ data: { page }, location }) => {
   const { title, subtitle, body } = page
   const { excerpt, html } = body && body.data
   return (
@@ -18,7 +18,7 @@ const LandingPage = ({ data: { page }, location }) => {
   )
 }
 
-export default LandingPage
+export default IndexPage
 
 export const query = graphql`
   {

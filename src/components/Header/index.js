@@ -13,7 +13,7 @@ const searchIndices = [
 const Header = ({ site }) => (
   <HeaderContainer>
     <SiteTitle to="/" title={site.title} rel="home">
-      <Logo />
+      <Logo alt={site.title} />
     </SiteTitle>
     <Nav />
     <Search collapse indices={searchIndices} />

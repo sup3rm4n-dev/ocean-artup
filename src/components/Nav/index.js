@@ -20,7 +20,7 @@ const query = graphql`
 export default props => (
   <StaticQuery
     query={query}
-    render={data => <Nav nav={data.nav.data.nav} {...props} />}
+    render={data => <Nav {...data.nav.data} {...props} />}
   />
 )
 

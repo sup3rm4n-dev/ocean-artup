@@ -37,6 +37,12 @@ export const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.orange} !important;
     }
   }
+  .gatsby-resp-image-wrapper {
+    transition: 0.5s;
+    :hover {
+      transform: scale(1.05);
+    }
+  }
 `
 
 export const Root = styled.main`
