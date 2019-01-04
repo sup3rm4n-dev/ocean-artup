@@ -7,7 +7,8 @@ import {
 } from 'react-instantsearch-dom'
 import { Algolia } from 'styled-icons/fa-brands/Algolia'
 
-import { Root, SearchBox, HitsWrapper, By } from './styles'
+import { Root, HitsWrapper, By } from './styles'
+import Input from './Input'
 import * as hitComps from './hits'
 
 const events = ['mousedown', 'touchstart']
@@ -58,13 +59,13 @@ export default class Search extends Component {
     const { indices, collapse, hitsAsGrid } = this.props
     return (
       <InstantSearch
-        appId="9T7OJX4FQ8"
-        apiKey="3a6f581840e41d3b7e9c804a899ce2c2"
+        appId={process.env.GATSBY_ALGOLIA_APP_ID}
+        apiKey={process.env.GATSBY_ALGOLIA_SEARCH_KEY}
         indexName={indices[0].name}
         onSearchStateChange={this.updateState}
         root={{ Root, props: { ref } }}
       >
-        <SearchBox onFocus={this.focus} {...{ collapse, focussed }} />
+        <Input onFocus={this.focus} {...{ collapse, focussed }} />
         <HitsWrapper
           show={query.length > 0 && focussed}
           hitsAsGrid={hitsAsGrid}
