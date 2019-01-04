@@ -13,8 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.contentfulSpaceId,
-        accessToken: process.env.contentfulAccessToken,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
@@ -39,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GATrackingId,
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
     `gatsby-plugin-offline`,
@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.algoliaAppId,
-        apiKey: process.env.algoliaAdminKey,
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries,
         chunkSize: 10000, // default: 1000
       },
