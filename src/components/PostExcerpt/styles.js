@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 export const Post = styled.article`
   height: 100%;
@@ -15,6 +16,10 @@ export const Post = styled.article`
   a:first-child {
     height: min-content;
   }
+`
+
+export const Cover = styled(Img)`
+  height: calc(10em + 4vh);
 `
 
 export const Title = styled.h3`

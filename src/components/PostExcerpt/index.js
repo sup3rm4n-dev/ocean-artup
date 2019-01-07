@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
-import { Post, Title, Excerpt } from './styles'
+import { Post, Cover, Title, Excerpt } from './styles'
 import PostMeta from '../PostMeta'
 
-const PostExcerpt = ({ post, post: { title, slug, body, featuredImage } }) => (
+const PostExcerpt = ({ post, post: { title, slug, body, cover } }) => (
   <Post>
+    {cover && (
       <Link to={`blog/` + slug}>
+        <Cover fluid={cover.fluid} alt={cover.title} />
       </Link>
     )}
     <main>
