@@ -33,7 +33,7 @@ const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
         <span>Categories: </span>
         {categories.map(({ title, slug }, index) => (
           <Fragment key={slug}>
-            {!!index && ', '}
+            {!!index && `, `}
             <Link to={`blog/` + slug}>{title}</Link>
           </Fragment>
         ))}
@@ -61,5 +61,5 @@ PostMeta.propTypes = {
 }
 
 PostMeta.defaultProps = {
-  iconSize: '1.4em',
+  iconSize: `1.4em`,
 }

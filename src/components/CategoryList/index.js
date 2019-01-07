@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { CategoryContainer, List, CategoryIcon, CategoryLink } from './styles'
 
 const Category = ({ title, slug, icon }) => (
-  <CategoryLink activeClassName="active" to={`/blog/` + slug}>
+  <CategoryLink activeClassName="active" to={`blog/` + slug}>
     {icon && <CategoryIcon src={icon.file.url} alt={icon.title} />}
     {title}
   </CategoryLink>
