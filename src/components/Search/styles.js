@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import { Search } from 'styled-icons/fa-solid/Search'
+import styled, { css } from "styled-components"
+import { Search } from "styled-icons/fa-solid/Search"
 
 export const Root = styled.div`
   position: relative;
@@ -39,7 +39,7 @@ const collapse = css`
 `
 
 const expand = css`
-  background: ${props => props.theme.veryLightGray};
+  background: ${props => props.theme.lightestGray};
   width: 6em;
   margin-left: -1.6em;
   padding-left: 1.6em;
@@ -92,7 +92,7 @@ const grid = css`
     grid-gap: 1em;
     li {
       padding: 0.3em 0.5em;
-      background: ${props => props.theme.veryLightGray};
+      background: ${props => props.theme.lightestGray};
       border-radius: ${props => props.theme.smallBorderRadius};
     }
   }
