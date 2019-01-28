@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React, { Fragment } from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
-import { UserEdit } from 'styled-icons/fa-solid/UserEdit'
-import { Calendar as Date } from 'styled-icons/octicons/Calendar'
-import { Timer } from 'styled-icons/material/Timer'
+import { UserEdit } from "styled-icons/fa-solid/UserEdit"
+import { Calendar as Date } from "styled-icons/octicons/Calendar"
+import { Timer } from "styled-icons/material/Timer"
+import { Tags } from "styled-icons/fa-solid/Tags"
 
-import { Meta, AuthorPhoto } from './styles'
+import { Meta, AuthorPhoto } from "./styles"
 
-const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
+const PostMeta = ({ author, date, tags, body, inTitle, iconSize }) => (
   <>
     <Meta inTitle={inTitle}>
       <span>
@@ -19,22 +20,24 @@ const PostMeta = ({ author, date, categories, body, inTitle, iconSize }) => (
       </span>
       <span>
         <Date size={iconSize} />
-        &ensp;
+        &nbsp;
         {date}
       </span>
       <span>
         <Timer size={iconSize} />
-        &ensp;
+        &nbsp;
         {body.data.timeToRead} min read
       </span>
     </Meta>
     {!inTitle && (
       <div>
-        <span>Categories: </span>
-        {categories.map(({ title, slug }, index) => (
+        <Tags size="1em" />
+        &nbsp;
+        <span>Tags: </span>
+        {tags.map(({ title, slug }, index) => (
           <Fragment key={slug}>
             {!!index && `, `}
-            <Link to={`blog/` + slug}>{title}</Link>
+            <Link to={`/blog/` + slug}>{title}</Link>
           </Fragment>
         ))}
       </div>
@@ -51,7 +54,7 @@ PostMeta.propTypes = {
     photo: PropTypes.object.isRequired,
   }).isRequired,
   date: PropTypes.string.isRequired,
-  categories: PropTypes.arrayOf(
+  tags: PropTypes.arrayOf(
     PropTypes.shape({
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
