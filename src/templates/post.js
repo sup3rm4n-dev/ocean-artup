@@ -1,9 +1,9 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react"
+import { graphql } from "gatsby"
 
-import Global from '../components/Global'
-import PostTitle from '../components/PostTitle'
-import PageBody from '../components/styles/PageBody'
+import Global from "../components/Global"
+import PostTitle from "../components/PostTitle"
+import PageBody from "../components/styles/PageBody"
 
 const PostTemplate = ({ data: { post }, location }) => {
   const { title, body, cover } = post
@@ -24,7 +24,7 @@ const PostTemplate = ({ data: { post }, location }) => {
 export default PostTemplate
 
 export const query = graphql`
-  fragment postFields on ContentfulBlogPost {
+  fragment postFields on ContentfulPost {
     slug
     title
     author {
@@ -36,7 +36,7 @@ export const query = graphql`
         }
       }
     }
-    categories {
+    tags {
       title
       slug
     }
@@ -56,7 +56,7 @@ export const query = graphql`
     }
   }
   query($slug: String!) {
-    post: contentfulBlogPost(slug: { eq: $slug }) {
+    post: contentfulPost(slug: { eq: $slug }) {
       ...postFields
     }
   }

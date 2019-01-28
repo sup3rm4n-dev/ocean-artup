@@ -20,7 +20,7 @@ const pageQuery = `{
 }`
 
 const postQuery = `{
-  posts: allContentfulBlogPost {
+  posts: allContentfulPost {
     edges {
       node {
         objectID: id
@@ -31,7 +31,7 @@ const postQuery = `{
           name
           email
         }
-        categories {
+        tags {
           title
           slug
         }
