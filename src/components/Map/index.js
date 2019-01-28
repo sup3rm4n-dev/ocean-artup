@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import { MapContainer } from './styles'
+import { MapContainer } from "./styles"
 
 export default class Map extends Component {
   onLoad = () => {
@@ -15,7 +15,9 @@ export default class Map extends Component {
     if (!window.google) {
       const script = document.createElement(`script`)
       script.type = `text/javascript`
-      script.src = `https://maps.google.com/maps/api/js?key=AIzaSyCTwqPdip2BbUvii_w15wg31TOfyKAUoSw`
+      script.src = `https://maps.google.com/maps/api/js?key=${
+        process.env.GATSBY_GOOGLE_MAPS_API_KEY
+      }`
       const headScript = document.getElementsByTagName(`script`)[0]
       headScript.parentNode.insertBefore(script, headScript)
       script.addEventListener(`load`, () => {
