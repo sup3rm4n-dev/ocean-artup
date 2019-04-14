@@ -26,6 +26,11 @@ module.exports = {
             options: {
               maxWidth: 2500,
               linkImagesToOriginal: false,
+              withWebp: true,
+              wrapperStyle: `
+                border-radius: 0.5em;
+                overflow: hidden;
+              `,
             },
           },
           `gatsby-remark-embed-video`,
