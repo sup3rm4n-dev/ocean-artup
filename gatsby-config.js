@@ -7,7 +7,7 @@ module.exports = {
     title: `Ocean artUp`,
     description: `ERC research project investigating articificial upwelling`,
     author: `Janosh Riebesell`,
-    siteUrl: `https://ocean-artup.eu`,
+    url: `https://ocean-artup.eu`,
   },
   plugins: [
     {
@@ -48,7 +48,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-algolia`,
