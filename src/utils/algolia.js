@@ -49,26 +49,25 @@ const postQuery = `{
   }
 }`
 
+const flatten = arr =>
+  arr.map(({ node: { body, ...rest } }) => ({
+    ...body.remark,
+    ...rest,
+  }))
+const settings = { attributesToSnippet: [`excerpt:20`] }
+
 const queries = [
   {
-    query: pageQuery,
-    transformer: ({ data }) =>
-      data.pages.edges.map(({ node: { body, ...rest } }) => ({
-        ...body.remark,
-        ...rest,
-      })),
     indexName: `Pages`,
-    settings: { attributesToSnippet: [`excerpt:20`] },
+    query: pageQuery,
+    transformer: ({ data }) => flatten(data.pages.edges),
+    settings,
   },
   {
-    query: postQuery,
-    transformer: ({ data }) =>
-      data.posts.edges.map(({ node: { body, ...rest } }) => ({
-        ...body.remark,
-        ...rest,
-      })),
     indexName: `Posts`,
-    settings: { attributesToSnippet: [`excerpt:20`] },
+    query: postQuery,
+    transformer: ({ data }) => flatten(data.posts.edges),
+    settings,
   },
 ]
 
