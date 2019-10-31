@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
-import { Arrow } from "./styles"
+import { Arrow } from './styles'
 
 // vertical page scroll to or by height in units of window height
 export default function Scroll({ direction = `up`, by, to, ...rest }) {
   const { showBelow, className, size = `1.7em` } = rest
 
   if (![`up`, `down`].includes(direction))
-    throw TypeError(
-      `Scroll component's direction prop must be either 'up' or 'down'`
-    )
+    throw TypeError(`Scroll component's direction prop must be either 'up' or 'down'`)
   if (to && to <= 0)
     throw TypeError(`Scroll component's to prop must be a positive number`)
   if (by && typeof by !== `number`)
