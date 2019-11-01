@@ -68,6 +68,9 @@
     ".cache",
     "public"
   ],
+  "resolutions": {
+    "sharp": "0.22.1"
+  },
   "prettier": {
     "trailingComma": "es5",
     "semi": false,
