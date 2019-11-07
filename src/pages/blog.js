@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
-import Global from '../components/Global'
-import PageTitle from '../components/PageTitle'
-import PostList, { ListTitle, PostContainer } from '../components/PostList'
-import { PageBody } from '../components/styles'
-import TagList from '../components/TagList'
+import Global from 'components/Global'
+import PageTitle from 'components/PageTitle'
+import PostList, { ListTitle, PostContainer } from 'components/PostList'
+import { PageBody } from 'components/styles'
+import TagList from 'components/TagList'
 
 const filterPostsByTag = (activeTag, posts) =>
   activeTag === `all`

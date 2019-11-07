@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { useMediaQuery } from '../../utils/mediaQuery'
+import { useMediaQuery } from 'utils/mediaQuery'
 
 import MobileNav from './Mobile'
 import DesktopNav from './Desktop'
