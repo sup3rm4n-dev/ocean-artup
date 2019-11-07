@@ -1,7 +1,6 @@
 import React from 'react'
 import { connectSearchBox } from 'react-instantsearch-dom'
-
-import { SearchIcon, Form, Input } from './styles'
+import { Form, Input, SearchIcon } from './styles'
 
 export default connectSearchBox(({ refine, ...rest }) => (
   <Form>
